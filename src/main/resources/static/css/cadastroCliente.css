@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(177, 142, 209);
+    background-attachment: fixed;
+    background-image: url(./img/a.png);
+   }
+ 
+   img{
+    margin-left: 130px;
+    width: 40%;
+    height: 100%;
+    border-radius: 0%;
+ }
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+   
+   label, input, select, textarea{
+       display: block ;
+       width: 95%;
+       padding: 10px;
+       margin-bottom: 20px;
+   }
+   
+    form{
+       width: 550px;
+       margin: auto;
+       background: #ffffff;
+       padding: 40px;
+       border-radius: 10px;
+       color: rgb(102, 10, 10);
+       opacity: 0.8;
+    }
+    label{
+       padding: 0;
+       margin: 0;
+       width: 100% ;
+       font-size: 18px;
+    }
+    .emlinha{
+       display: inline;
+       width: 10%;
+       font-size: 16px;
+    }
+    .medidas{
+       display: inline;
+       width: 35%;
+    }
+    input[type='checkbox'], input[type='radio']{
+      margin-right: 0px;
+      margin-left: 15px;
+   }
+   input:focus, select:focus, textarea:focus{
+      outline: none;
+      border: solid 1px #761414;
+   }
+    #enviar{
+      width: 100%;
+      border: 2px solid #811919;
+      background-color: #731a1a;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      cursor: pointer;
+      padding: 15px;
+    }
+    #enviar:hover{
+     background-color: #bd5353;
+     color: #ffffff;
+   transition:all linear 0.3;
+    }
+   
+   button{
+      text-align: center;
+   }
