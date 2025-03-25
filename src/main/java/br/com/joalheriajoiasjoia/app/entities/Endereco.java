@@ -15,7 +15,7 @@ public class Endereco {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idEnderecos", nullable = false)
+	@Column(name = "id_endereco", nullable = false)
 	private Long idEndereco;
 
 	@Column(name = "numeroCasa", nullable = false, length = 4)
