@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const nome = document.getElementById("nome").value;
+        const nome_Produto = document.getElementById("nome_Produto").value;
         const preco = document.getElementById("preco").value;
-        const cor = document.getElementById("cor").value;
+        const nome_ornamento = document.getElementById("nome_ornamento").value;
+		const img_url = document.getElementById("img_url").value;
+		const categoria_produto = parseInt(document.getElementById("categoria_produto").value);
+		const tipo_produto = parseInt(document.getElementById("tipo_produto").value);
+		
 
         try {
 			
@@ -17,9 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    nome,
+                    nome_Produto,
                     preco,
-                    cor
+                    nome_ornamento,
+					img_url,
+					categoria_produto: {
+					                   id: categoria_produto
+					               }, 
+					tipo_produto: {
+					                   id: tipo_produto
+					               }
                 }),
             });
 

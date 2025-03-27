@@ -16,8 +16,8 @@ public class Ornamento {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_ornamento", nullable = false)
-	private Long id_ornamento;
+	@Column(name = "id_Ornamento", nullable = false)
+	private Long id_Ornamento;
 	
 	@Column(name = "nome_ornamento", nullable = false, length = 100)
 	private String nome_ornamento;
@@ -33,19 +33,19 @@ public class Ornamento {
 	public Ornamento() {
 		
 	}
-	public Ornamento(Long id_ornamento, String nome_ornamento, String descricao_ornamento, Produto produto) {
-		this.id_ornamento = id_ornamento;
+	public Ornamento(Long id_Ornamento, String nome_ornamento, String descricao_ornamento, Produto produto) {
+		this.id_Ornamento = id_Ornamento;
 		this.nome_ornamento = nome_ornamento;
 		this.descricao_ornamento = descricao_ornamento;
 		this.produto = produto;
 	}
 	
 	//Getters e Setters
-	public Long getId_ornamento() {
-		return id_ornamento;
+	public Long getId_Ornamento() {
+		return id_Ornamento;
 	}
-	public void setId_ornamento(Long id_ornamento) {
-		this.id_ornamento = id_ornamento;
+	public void setId_Ornamento(Long id_Ornamento) {
+		this.id_Ornamento = id_Ornamento;
 	}
 	public String getNome_ornamento() {
 		return nome_ornamento;

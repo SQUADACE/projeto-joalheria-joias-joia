@@ -28,12 +28,12 @@ public class Produto {
 	@Column(name = "descricao_Produto", nullable = false, length = 100)
 	private String descricao_Produto;
 
-	@Column(name = "imagemUrl", nullable = false, length = 100)
-	private String imagemUrl;
+	@Column(name = "imgUrl", nullable = false, length = 100)
+	private String imgUrl;
 	
 	@ManyToOne
-	@JoinColumn(name = "MATERIAL_PRODUTO_id_Material_Produto")
-	private Material_Produto tipo_usuario;
+	@JoinColumn(name = "ORNAMENTO_id_Ornamento")
+	private Ornamento ornamento;
 	
 	@ManyToOne
 	@JoinColumn(name = "TIPO_PRODUTO_id_Tipo_Produto")
@@ -47,14 +47,20 @@ public class Produto {
 	public Produto() {
 
 	}
-	public Produto(Long idProduto, String nome_Produto, Double preco, String descricao_Produto, String imagemUrl) {
+	
+	public Produto(Long idProduto, String nome_Produto, Double preco, String descricao_Produto, String imgUrl,
+			Ornamento ornamento, Tipo_Produto tipo_Produto, Categoria_Produto categoria_Produto) {
 		this.idProduto = idProduto;
 		this.nome_Produto = nome_Produto;
 		this.preco = preco;
 		this.descricao_Produto = descricao_Produto;
-		this.imagemUrl = imagemUrl;
+		this.imgUrl = imgUrl;
+		this.ornamento = ornamento;
+		this.tipo_Produto = tipo_Produto;
+		this.categoria_Produto = categoria_Produto;
 	}
-	
+
+
 	//Getters e Setters
 	public Long getIdProduto() {
 		return idProduto;
@@ -80,10 +86,35 @@ public class Produto {
 	public void setDescricao_Produto(String descricao_Produto) {
 		this.descricao_Produto = descricao_Produto;
 	}
-	public String getImagemUrl() {
-		return imagemUrl;
+	public String getImgUrl() {
+		return imgUrl;
 	}
-	public void setImagemUrl(String imagemUrl) {
-		this.imagemUrl = imagemUrl;
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
+
+	public Ornamento getOrnamento() {
+		return ornamento;
+	}
+
+	public void setOrnamento(Ornamento ornamento) {
+		this.ornamento = ornamento;
+	}
+
+	public Tipo_Produto getTipo_Produto() {
+		return tipo_Produto;
+	}
+
+	public void setTipo_Produto(Tipo_Produto tipo_Produto) {
+		this.tipo_Produto = tipo_Produto;
+	}
+
+	public Categoria_Produto getCategoria_Produto() {
+		return categoria_Produto;
+	}
+
+	public void setCategoria_Produto(Categoria_Produto categoria_Produto) {
+		this.categoria_Produto = categoria_Produto;
+	}
+	
 }

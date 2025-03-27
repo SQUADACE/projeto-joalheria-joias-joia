@@ -32,7 +32,7 @@ public class Usuario {
 	@Column(name = "telefone", nullable = false, unique = false)
 	private String telefone;
 
-	@Column(name = "dt_nascimento", nullable = true, unique = false)
+	@Column(name = "data_nascimento", nullable = true, unique = false)
 	private LocalDate dataNascimento;
 	
 	@Column(name = "senha", nullable = true)
