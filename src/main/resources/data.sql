@@ -1,9 +1,11 @@
-INSERT IGNORE INTO tb_tipo_usuario (idTipo_Usuario, nomeTipo_Usuario) VALUES
+-- Conteúdo do Cadastro do Cliente
+INSERT IGNORE INTO tb_tipo_usuario (id_tipo_Usuario, nome_tipo_Usuario) VALUES
 (1, 'Admin'),
 (2, 'Cliente'),
 (3, 'Vendedor'),
 (4, 'Gerente');
 
+-- Conteúdo do Cadastro do Produto
 INSERT IGNORE INTO tb_categoria_produto (id_categoria_produto, nome_categoria_produto, descricao_categoria_produto) VALUES
 (1, 'Anéis', 'Acesório para os dedos'),
 (2, 'Colares', 'Acesório para o pescoço'),

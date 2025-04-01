@@ -14,8 +14,8 @@ public class Tipo_Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTipo_Produto", nullable = false)
-	private Long idTipo_Produto;
+	@Column(name = "id_tipo_Produto", nullable = false)
+	private Long id_tipo_Produto;
 	
 	@Column(name = "nome_tipo_produto", nullable = false, length = 100)
 	private String nome_tipo_produto;
@@ -27,19 +27,19 @@ public class Tipo_Produto {
 	public Tipo_Produto() {
 
 	}
-	public Tipo_Produto(Long idTipo_Produto, String descricao_tipo_produto, String nome_tipo_produto) {
-		this.idTipo_Produto = idTipo_Produto;
+	public Tipo_Produto(Long id_tipo_Produto, String descricao_tipo_produto, String nome_tipo_produto) {
+		this.id_tipo_Produto = id_tipo_Produto;
 		this.descricao_tipo_produto = descricao_tipo_produto;
 		this.nome_tipo_produto = nome_tipo_produto;
 	}
 
 	//Getters e Setters
-	public Long getIdTipo_Produto() {
-		return idTipo_Produto;
+	public Long getId_Tipo_Produto() {
+		return id_tipo_Produto;
 	}
 
-	public void setIdTipo_Produto(Long idTipo_Produto) {
-		this.idTipo_Produto = idTipo_Produto;
+	public void setId_Tipo_Produto(Long id_tipo_Produto) {
+		this.id_tipo_Produto = id_tipo_Produto;
 	}
 
 	public String getDescricao_Tipo_Produto() {

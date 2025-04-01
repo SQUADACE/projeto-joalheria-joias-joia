@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	form.addEventListener("submit", async (event) => {
 		event.preventDefault();
 
-		const nomeUsuario = document.getElementById("nomeUsuario").value;
+		const nome_usuario = document.getElementById("nome_usuario").value;
 		const cpf = document.getElementById("cpf").value;
 		const email = document.getElementById("email").value;
 		const telefone = document.getElementById("telefone").value;
-		const dataNascimento = document.getElementById("dataNascimento").value;
+		const data_nascimento = document.getElementById("data_nascimento").value;
 		const senha = document.getElementById("senha").value;
 		
 		try {
@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 					"Content-Type": "application/json"
 				},
 				body: JSON.stringify({
-					nomeUsuario,
+					nome_usuario,
 					cpf,
 					email,
 					telefone,
-					dataNascimento,
+					data_nascimento,
 					senha,
 					tipo_usuario:{
 						id: 2

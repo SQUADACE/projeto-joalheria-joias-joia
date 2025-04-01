@@ -17,11 +17,11 @@ public class Usuario {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUsuario", nullable = false)
-	private Long idUsuario;
+	@Column(name = "id_usuario", nullable = false)
+	private Long id_usuario;
 
-	@Column(name = "nomeUsuario", nullable = false, length = 100)
-	private String nomeUsuario;
+	@Column(name = "nome_usuario",  length = 100)
+	private String nome_usuario;
 
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)
 	private String cpf;
@@ -29,11 +29,11 @@ public class Usuario {
 	@Column(name = "email", nullable = false, unique = true, length = 50)
 	private String email;
 
-	@Column(name = "telefone", nullable = false, unique = false)
+	@Column(name = "telefone", nullable = false, unique = false, length = 15)
 	private String telefone;
 
 	@Column(name = "data_nascimento", nullable = true, unique = false)
-	private LocalDate dataNascimento;
+	private LocalDate data_nascimento;
 	
 	@Column(name = "senha", nullable = true)
 	private String senha;
@@ -46,30 +46,30 @@ public class Usuario {
 	public Usuario() {
 
 	}
-	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String telefone,
-			LocalDate dataNascimento, String senha, Tipo_Usuario tipo_usuario) {
-		this.idUsuario = idUsuario;
-		this.nomeUsuario = nomeUsuario;
+	public Usuario(Long id_usuario, String nome_usuario, String cpf, String email, String telefone,
+			LocalDate data_nascimento, String senha, Tipo_Usuario tipo_usuario) {
+		this.id_usuario = id_usuario;
+		this.nome_usuario = nome_usuario;
 		this.cpf = cpf;
 		this.email = email;
 		this.telefone = telefone;
-		this.dataNascimento = dataNascimento;
+		this.data_nascimento = data_nascimento;
 		this.senha = senha;
 		this.tipo_usuario = tipo_usuario;
 	}
 	
 	//Getters e Setters
-	public Long getIdUsuario() {
-		return idUsuario;
+	public Long getId_Usuario() {
+		return id_usuario;
 	}
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setId_Usuario(Long id_usuario) {
+		this.id_usuario = id_usuario;
 	}
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getNome_Usuario() {
+		return nome_usuario;
 	}
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setNome_Usuario(String nome_usuario) {
+		this.nome_usuario = nome_usuario;
 	}
 	public String getCpf() {
 		return cpf;
@@ -89,11 +89,11 @@ public class Usuario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
+	public LocalDate getData_Nascimento() {
+		return data_nascimento;
 	}
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setData_Nascimento(LocalDate data_nascimento) {
+		this.data_nascimento = data_nascimento;
 	}
 	public String getSenha() {
 		return senha;
