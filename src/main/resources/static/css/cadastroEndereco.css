@@ -76,3 +76,8 @@ body{
    button{
       text-align: center;
    }
+   
+   #logo{
+   width: 90%;
+   margin-left: 20px;
+     }
