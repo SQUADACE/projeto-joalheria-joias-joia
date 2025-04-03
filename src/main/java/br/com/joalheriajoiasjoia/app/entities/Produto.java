@@ -16,8 +16,8 @@ public class Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProduto", nullable = false)
-	private Long idProduto;
+	@Column(name = "id_Produto", nullable = false)
+	private Long id_Produto;
 
 	@Column(name = "nome_Produto", nullable = false, length = 100)
 	private String nome_Produto;
@@ -48,9 +48,9 @@ public class Produto {
 
 	}
 	
-	public Produto(Long idProduto, String nome_Produto, Double preco, String descricao_Produto, String imgUrl,
+	public Produto(Long id_Produto, String nome_Produto, Double preco, String descricao_Produto, String imgUrl,
 			Ornamento ornamento, Tipo_Produto tipo_Produto, Categoria_Produto categoria_Produto) {
-		this.idProduto = idProduto;
+		this.id_Produto = id_Produto;
 		this.nome_Produto = nome_Produto;
 		this.preco = preco;
 		this.descricao_Produto = descricao_Produto;
@@ -62,11 +62,11 @@ public class Produto {
 
 
 	//Getters e Setters
-	public Long getIdProduto() {
-		return idProduto;
+	public Long getId_Produto() {
+		return id_Produto;
 	}
-	public void setIdProduto(Long idProduto) {
-		this.idProduto = idProduto;
+	public void setId_Produto(Long id_Produto) {
+		this.id_Produto = id_Produto;
 	}
 	public String getNome_Produto() {
 		return nome_Produto;

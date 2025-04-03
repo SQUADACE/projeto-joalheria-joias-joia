@@ -14,48 +14,48 @@ public class Categoria_Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_categoria_produto", nullable = false)
-	private Long id_categoria_produto;
+	@Column(name = "id_Categoria_Produto", nullable = false)
+	private Long id_Categoria_Produto;
 	
-	@Column(name = "nome_categoria_produto", nullable = false, length = 100)
-	private String nome_categoria_produto;
+	@Column(name = "nome_Categoria_Produto", nullable = false, length = 100)
+	private String nome_Categoria_Produto;
 	
-	@Column(name = "descricao_categoria_produto", nullable = false, length = 100)
-	private String descricao_categoria_produto;
+	@Column(name = "descricao_Categoria_Produto", nullable = false, length = 100)
+	private String descricao_Categoria_Produto;
 	
 	//Construtores
 	public Categoria_Produto() {
 		
 	}
 	
-	public Categoria_Produto(Long id_categoria_produto, String nome_categoria_produto, String descricao_categoria_produto) {
-		this.id_categoria_produto = id_categoria_produto;
-		this.nome_categoria_produto = nome_categoria_produto;
-		this.descricao_categoria_produto = descricao_categoria_produto;
+	public Categoria_Produto(Long id_Categoria_Produto, String nome_Categoria_Produto, String descricao_Categoria_Produto) {
+		this.id_Categoria_Produto = id_Categoria_Produto;
+		this.nome_Categoria_Produto = nome_Categoria_Produto;
+		this.descricao_Categoria_Produto = descricao_Categoria_Produto;
 	}
 
 	//Getters e Setters
 	public Long getId_Categoria_Produto() {
-		return id_categoria_produto;
+		return id_Categoria_Produto;
 	}
 
-	public void setId_Categoria_Produto(Long id_categoria_produto) {
-		this.id_categoria_produto = id_categoria_produto;
+	public void setId_Categoria_Produto(Long id_Categoria_Produto) {
+		this.id_Categoria_Produto = id_Categoria_Produto;
 	}
 
 	public String getNome_Categoria_Produto() {
-		return nome_categoria_produto;
+		return nome_Categoria_Produto;
 	}
 
-	public void setNome_Categoria_Produto(String nome_categoria_produto) {
-		this.nome_categoria_produto = nome_categoria_produto;
+	public void setNome_Categoria_Produto(String nome_Categoria_Produto) {
+		this.nome_Categoria_Produto = nome_Categoria_Produto;
 	}
 
 	public String getDescricao_Categoria_Produto() {
-		return descricao_categoria_produto;
+		return descricao_Categoria_Produto;
 	}
 
-	public void setDescricao_Categoria_Produto(String descricao_categoria_produto) {
-		this.descricao_categoria_produto = descricao_categoria_produto;
+	public void setDescricao_Categoria_Produto(String descricao_Categoria_Produto) {
+		this.descricao_Categoria_Produto = descricao_Categoria_Produto;
 	}
 }

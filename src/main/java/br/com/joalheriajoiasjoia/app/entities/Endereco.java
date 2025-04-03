@@ -16,10 +16,10 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_endereco", nullable = false)
-	private Long idEndereco;
+	private Long id_endereco;
 
-	@Column(name = "numeroCasa", nullable = false, length = 4)
-	private String numero;
+	@Column(name = "numero_Casa", nullable = false, length = 4)
+	private String numero_Casa;
 
 	@Column(name = "rua", nullable = false, length = 100)
 	private String rua;
@@ -40,7 +40,7 @@ public class Endereco {
 	private String complemento;
 
 	@ManyToOne
-	@JoinColumn(name = "USUARIO_id_Usuario")
+	@JoinColumn(name = "USUARIO_id_usuario")
 	private Usuario usuario;
 
 	//Construtores
@@ -48,10 +48,10 @@ public class Endereco {
 
 	}
 
-	public Endereco(Long idEndereco, String numero, String rua, String bairro, String cidade, String cep, String uf,
+	public Endereco(Long id_endereco, String numero_Casa, String rua, String bairro, String cidade, String cep, String uf,
 			String complemento, Usuario usuario) {
-		this.idEndereco = idEndereco;
-		this.numero = numero;
+		this.id_endereco = id_endereco;
+		this.numero_Casa = numero_Casa;
 		this.rua = rua;
 		this.bairro = bairro;
 		this.cidade = cidade;
@@ -62,12 +62,12 @@ public class Endereco {
 	}
 
 	// Getters e Setters
-	public Long getIdEndereco() {
-		return idEndereco;
+	public Long getId_Endereco() {
+		return id_endereco;
 	}
 
-	public void setIdEndereco(Long idEndereco) {
-		this.idEndereco = idEndereco;
+	public void setId_Endereco(Long id_endereco) {
+		this.id_endereco = id_endereco;
 	}
 
 	public String getCep() {
@@ -86,12 +86,12 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public String getNumero() {
-		return numero;
+	public String getNumero_Casa() {
+		return numero_Casa;
 	}
 
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setNumero_Casa(String numero_Casa) {
+		this.numero_Casa = numero_Casa;
 	}
 
 	public String getRua() {

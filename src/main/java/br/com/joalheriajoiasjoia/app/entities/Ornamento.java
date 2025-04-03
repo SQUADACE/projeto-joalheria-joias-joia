@@ -19,11 +19,11 @@ public class Ornamento {
 	@Column(name = "id_Ornamento", nullable = false)
 	private Long id_Ornamento;
 	
-	@Column(name = "nome_ornamento", nullable = false, length = 100)
-	private String nome_ornamento;
+	@Column(name = "nome_Ornamento", nullable = false, length = 100)
+	private String nome_Ornamento;
 	
-	@Column(name = "descricao_ornamento", nullable = false, length = 100)
-	private String descricao_ornamento;
+	@Column(name = "descricao_Ornamento", nullable = false, length = 100)
+	private String descricao_Ornamento;
 	
 	@ManyToOne
 	@JoinColumn(name = "Produto_id_Produto")
@@ -33,10 +33,10 @@ public class Ornamento {
 	public Ornamento() {
 		
 	}
-	public Ornamento(Long id_Ornamento, String nome_ornamento, String descricao_ornamento, Produto produto) {
+	public Ornamento(Long id_Ornamento, String nome_Ornamento, String descricao_Ornamento, Produto produto) {
 		this.id_Ornamento = id_Ornamento;
-		this.nome_ornamento = nome_ornamento;
-		this.descricao_ornamento = descricao_ornamento;
+		this.nome_Ornamento = nome_Ornamento;
+		this.descricao_Ornamento = descricao_Ornamento;
 		this.produto = produto;
 	}
 	
@@ -47,17 +47,17 @@ public class Ornamento {
 	public void setId_Ornamento(Long id_Ornamento) {
 		this.id_Ornamento = id_Ornamento;
 	}
-	public String getNome_ornamento() {
-		return nome_ornamento;
+	public String getNome_Ornamento() {
+		return nome_Ornamento;
 	}
-	public void setNome_ornamento(String nome_ornamento) {
-		this.nome_ornamento = nome_ornamento;
+	public void setNome_Ornamento(String nome_Ornamento) {
+		this.nome_Ornamento = nome_Ornamento;
 	}
-	public String getDescricao_ornamento() {
-		return descricao_ornamento;
+	public String getDescricao_Ornamento() {
+		return descricao_Ornamento;
 	}
-	public void setDescricao_ornamento(String descricao_ornamento) {
-		this.descricao_ornamento = descricao_ornamento;
+	public void setDescricao_Ornamento(String descricao_Ornamento) {
+		this.descricao_Ornamento = descricao_Ornamento;
 	}
 	public Produto getProduto() {
 		return produto;
