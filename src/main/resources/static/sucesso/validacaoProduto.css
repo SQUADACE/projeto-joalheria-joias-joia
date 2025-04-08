@@ -1,5 +1,5 @@
 body{
-    background-image: url(./img/Design\ sem\ nome.png);
+    background-image: url(../imgCadastroProduto/a.png);
     background-attachment: none;
     text-align: center;
 }
@@ -34,7 +34,7 @@ img{
     border-radius: 12px 12px 12px 12px;
 }
 
- #enviar{
+ a{
     width: 100%;
     border: 2px solid #8ad5cb;
     background-color: #8ad5cb;
@@ -43,8 +43,9 @@ img{
     cursor: pointer;
     padding: 15px;
     border-radius: 10px 10px 10px 10px;
+	border-top: 50px;
   }
-  #enviar:hover{
+ a:hover{
    background-color: #ffffff;
    border-color: #ffffff;
    color: #0d8070;
