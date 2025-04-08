@@ -43,7 +43,7 @@
 
         try {
 			
-            const response = await fetch("http://localhost:8080/cadastroendereco", {
+            const response = await fetch("http://localhost:8080/cadastro_endereco", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

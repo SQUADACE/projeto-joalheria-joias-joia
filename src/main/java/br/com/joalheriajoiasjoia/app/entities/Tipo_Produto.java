@@ -17,8 +17,8 @@ public class Tipo_Produto {
 	@Column(name = "id_Tipo_Produto", nullable = false)
 	private Long id_Tipo_Produto;
 	
-	@Column(name = "nome_Tipo_Produto", nullable = false, length = 100)
-	private String nome_Tipo_Produto;
+	@Column(name = "tipo_Produto", nullable = false, length = 100)
+	private String tipo_Produto;
 
 	@Column(name = "descricao_Tipo_Produto", nullable = false, length = 100)
 	private String descricao_Tipo_Produto;
@@ -27,10 +27,10 @@ public class Tipo_Produto {
 	public Tipo_Produto() {
 
 	}
-	public Tipo_Produto(Long id_Tipo_Produto, String descricao_Tipo_Produto, String nome_Tipo_Produto) {
+	public Tipo_Produto(Long id_Tipo_Produto, String tipo_Produto, String descricao_Tipo_Produto) {
 		this.id_Tipo_Produto = id_Tipo_Produto;
 		this.descricao_Tipo_Produto = descricao_Tipo_Produto;
-		this.nome_Tipo_Produto = nome_Tipo_Produto;
+		this.tipo_Produto = tipo_Produto;
 	}
 
 	//Getters e Setters
@@ -49,11 +49,11 @@ public class Tipo_Produto {
 	public void setDescricao_Tipo_Produto(String descricao_Tipo_Produto) {
 		this.descricao_Tipo_Produto = descricao_Tipo_Produto;
 	}
-	public String getNome_Tipo_Produto() {
-		return nome_Tipo_Produto;
+	public String getTipo_Produto() {
+		return tipo_Produto;
 	}
-	public void setNome_Tipo_Produto(String nome_Tipo_Produto) {
-		this.nome_Tipo_Produto = nome_Tipo_Produto;
+	public void setTipo_Produto(String tipo_Produto) {
+		this.tipo_Produto = tipo_Produto;
 	}
 	
 }

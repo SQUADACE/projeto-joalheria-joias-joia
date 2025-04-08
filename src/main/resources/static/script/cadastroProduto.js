@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const nome_Produto = document.getElementById("nome_Produto").value;
         const preco = document.getElementById("preco").value;
-        const nome_ornamento = document.getElementById("nome_ornamento").value;
+        const nome_Ornamento = document.getElementById("nome_Ornamento").value;
 		const img_url = document.getElementById("img_url").value;
-		const categoria_produto = parseInt(document.getElementById("categoria_produto").value);
-		const tipo_produto = parseInt(document.getElementById("tipo_produto").value);
+		const categoria_Produto = parseInt(document.getElementById("categoria_Produto").value);
+		const tipo_Produto = parseInt(document.getElementById("tipo_Produto").value);
 		
 
         try {
 			
-            const response = await fetch("http://localhost:8080/cadastroproduto", {
+            const response = await fetch("http://localhost:8080/cadastro_produto", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: JSON.stringify({
                     nome_Produto,
                     preco,
-                    nome_ornamento,
+                    nome_Ornamento,
 					img_url,
-					categoria_produto: {
-					                   id: categoria_produto
+					categoria_Produto: {
+					                   id: categoria_Produto
 					               }, 
-					tipo_produto: {
-					                   id: tipo_produto
+					tipo_Produto: {
+					                   id: tipo_Produto
 					               }
                 }),
             });

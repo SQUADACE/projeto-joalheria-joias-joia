@@ -6,7 +6,7 @@ INSERT IGNORE INTO tb_tipo_usuario (id_tipo_Usuario, nome_tipo_Usuario) VALUES
 (4, 'Gerente');
 
 -- Conteúdo do Cadastro do Produto
-INSERT IGNORE INTO tb_categoria_produto (id_categoria_Produto, nome_categoria_Produto, descricao_categoria_Produto) VALUES
+INSERT IGNORE INTO tb_categoria_produto (id_categoria_Produto, categoria_Produto, descricao_Categoria_Produto) VALUES
 (1, 'Anéis', 'Acessório para os dedos'),
 (2, 'Colares', 'Acessório para o pescoço'),
 (3, 'Brincos', 'Acessório para as orelhas'),
@@ -14,7 +14,7 @@ INSERT IGNORE INTO tb_categoria_produto (id_categoria_Produto, nome_categoria_Pr
 (5, 'Relógios', 'Acessório para não atrasar no SENAI');
 
 -- Inserindo Tipos (se não existirem)
-INSERT IGNORE INTO tb_tipo_produto (id_tipo_Produto, nome_tipo_Produto, descricao_tipo_Produto) VALUES
+INSERT IGNORE INTO tb_tipo_produto (id_Tipo_Produto, tipo_Produto, descricao_Tipo_Produto) VALUES
 (1, 'Ouro', '18k'),
 (2, 'Prata', '750'),
 (3, 'Bijuteria', 'É biju mas é de rico');
