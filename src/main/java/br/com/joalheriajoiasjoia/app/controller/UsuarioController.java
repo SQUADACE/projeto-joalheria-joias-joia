@@ -37,10 +37,13 @@ public class UsuarioController {
 		return usuarioService.getUsuarioById(id);
 	}
 
-	@PutMapping
-	public Usuario editUsuario(@RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
+	@PutMapping("/{id}")
+	public Usuario editUsuario(@PathVariable String id, @RequestBody Usuario usuario) {
+	    usuario.setCpf(id);
+	    return usuarioService.saveUsuario(usuario);
 	}
+
+	
 
 	@DeleteMapping("/{id}")
 	public void deleteUsuario(@PathVariable Long id) {
