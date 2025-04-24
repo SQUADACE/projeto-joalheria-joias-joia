@@ -5,18 +5,19 @@
     <link rel="stylesheet" href="./css/cadastroProduto.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Produto</title>
+    <title>JJJ</title>
 </head>
 <body>
-    <form action="validacao.html" method="post">
+    <form action="./sucesso/validacaoProduto.html" method="get">
         
-        <img src="./images/main-logo.png" alt="">
+        <img src="./imgCadastroProduto/Joalheria-Photoroom.png" alt="">
 
 <h1>Cadastro Produto</h1>
 
 <label for="nome"> Nome:</label>
-<input type="text" name="nome" id="nome_Produto" required="required" autofocus><br>
+<input type="text" name="nome" id="nome" required="required" autofocus><br>
 
+<<<<<<< HEAD
 <label for="tipo_Produto">Tipo:</label>
             <select id="tipo_Produto" name="tipo_Produto" required>
                 <option value="">Selecione um tipo</option>
@@ -34,19 +35,54 @@
                 <option value="4">Pulseiras</option>
                 <option value="5">Relógios</option>
             </select>
+=======
+<label>Tipo:</label>
+<select name="tipo" required>
+    <option value="">Selecione...</option>>
+    <option value="brinco">Brinco</option>
+    <option value="colar">Colar</option>
+    <option value="pulseira"> Pulseira</option>
+    <option value="anel"> Anel</option>
+    <option value="broche"> Broche</option>
+    <option value="outros"> Outros</option>
+</select>
+<br>
+
+<label> Descrição:</label>
+<textarea name="descricao" rows="10" cols="50" maxlength="100" required
+    placeholder="Descreva o Produto..."></textarea>
+<br>
+>>>>>>> 90e4aaaecdac48fb95eaf6e096eb977ba9b13185
 
 <label for="preco"> Preço:</label>
 <input type="number" name="preco" id="preco" required="required" autofocus><br>
 
 <h1>Ornamento</h1>
 
+<<<<<<< HEAD
 <label for="nome_Ornamento"> Nome do Ornamento:</label>
 <input type="nome" name="nome_Ornamento" id="nome_Ornamento" required="required" autofocus><br>
+=======
+<label for="nomeOrnamento"> Nome:</label>
+<input type="nome" name="nomeOrnamento" id="nomeOrnamento" required="required" autofocus><br>
+>>>>>>> 90e4aaaecdac48fb95eaf6e096eb977ba9b13185
 
+<label> Descrição:</label>
+<textarea name="descricaoOrnamento" rows="10" cols="50" maxlength="100" required
+    placeholder="Descreva o Produto..."></textarea>
 <br>
 
-<label for="img_url"> Imagem do produto:</label>
-<input type="file" name="img_url" id="img_url" required><br>
+<h1>Material</h1>
+
+<label for="nomeMaterial"> Nome:</label>
+<input type="nome" name="nomeMaterial" id="nomeMaterial" required="required" autofocus><br>
+
+<label> Descrição:</label>
+<textarea name="descricaoMaterial" rows="10" cols="50" maxlength="100" required
+    placeholder="Descreva o Material..."></textarea>
+
+<label for="foto"> Imagem do produto:</label>
+<input type="file" name="foto" id="foto" required><br>
 
     <input type="submit" value="Enviar" id="enviar">
 </p>
