@@ -32,15 +32,15 @@ public class Produto {
 	private String imgUrl;
 	
 	@ManyToOne
-	@JoinColumn(name = "ORNAMENTO_id_Ornamento")
+	@JoinColumn(name = "ORNAMENTO_id_Ornamento", nullable = false)
 	private Ornamento ornamento;
 	
 	@ManyToOne
-	@JoinColumn(name = "TIPO_PRODUTO_id_Tipo_Produto")
+	@JoinColumn(name = "TIPO_PRODUTO_id_Tipo_Produto", nullable = false)
 	private Tipo_Produto tipo_Produto;
 	
 	@ManyToOne
-	@JoinColumn(name = "CATEGORIA_PRODUTO_id_Categoria_Produto")
+	@JoinColumn(name = "CATEGORIA_PRODUTO_id_Categoria_Produto", nullable = false)
 	private Categoria_Produto categoria_Produto;
 
 	//Construtores

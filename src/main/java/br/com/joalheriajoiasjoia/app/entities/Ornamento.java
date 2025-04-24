@@ -26,7 +26,7 @@ public class Ornamento {
 	private String descricao_Ornamento;
 	
 	@ManyToOne
-	@JoinColumn(name = "Produto_id_Produto")
+	@JoinColumn(name = "Produto_id_Produto", nullable = false)
 	private Produto produto;
 	
 	//Construtores
