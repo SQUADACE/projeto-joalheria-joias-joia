@@ -1,10 +1,13 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,15 +26,20 @@ public class Categoria_Produto {
 	@Column(name = "descricao_Categoria_Produto", nullable = false, length = 100)
 	private String descricao_Categoria_Produto;
 	
+	@OneToMany(mappedBy = "categoria_Produto")
+	private List<Produto> produtos;
+	
 	//Construtores
 	public Categoria_Produto() {
 		
 	}
 	
-	public Categoria_Produto(Long id_Categoria_Produto, String categoria_Produto, String descricao_Categoria_Produto) {
+	public Categoria_Produto(Long id_Categoria_Produto, String categoria_Produto, String descricao_Categoria_Produto,
+			List<Produto> produtos) {
 		this.id_Categoria_Produto = id_Categoria_Produto;
 		this.categoria_Produto = categoria_Produto;
 		this.descricao_Categoria_Produto = descricao_Categoria_Produto;
+		this.produtos = produtos;
 	}
 
 	//Getters e Setters
@@ -57,5 +65,13 @@ public class Categoria_Produto {
 
 	public void setDescricao_Categoria_Produto(String descricao_Categoria_Produto) {
 		this.descricao_Categoria_Produto = descricao_Categoria_Produto;
+	}
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 }

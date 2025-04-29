@@ -1,5 +1,7 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,8 +18,8 @@ public class Endereco {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_endereco", nullable = false)
-	private Long id_endereco;
+	@Column(name = "id_Endereco", nullable = false)
+	private Long id_Endereco;
 
 	@Column(name = "numero_Casa", nullable = false, length = 4)
 	private String numero_Casa;
@@ -39,8 +42,11 @@ public class Endereco {
 	@Column(name = "complemento", nullable = false, length = 100)
 	private String complemento;
 
+	@OneToMany(mappedBy = "endereco")
+	private List<Pedido> pedidos;
+	
 	@ManyToOne
-	@JoinColumn(name = "USUARIO_id_usuario")
+	@JoinColumn(name = "id_Usuario")
 	private Usuario usuario;
 
 	//Construtores
@@ -48,9 +54,9 @@ public class Endereco {
 
 	}
 
-	public Endereco(Long id_endereco, String numero_Casa, String rua, String bairro, String cidade, String cep, String uf,
-			String complemento, Usuario usuario) {
-		this.id_endereco = id_endereco;
+	public Endereco(Long id_Endereco, String numero_Casa, String rua, String bairro, String cidade, String cep,
+			String uf, String complemento, List<Pedido> pedidos, Usuario usuario) {
+		this.id_Endereco = id_Endereco;
 		this.numero_Casa = numero_Casa;
 		this.rua = rua;
 		this.bairro = bairro;
@@ -58,16 +64,17 @@ public class Endereco {
 		this.cep = cep;
 		this.uf = uf;
 		this.complemento = complemento;
+		this.pedidos = pedidos;
 		this.usuario = usuario;
 	}
-
+	
 	// Getters e Setters
 	public Long getId_Endereco() {
-		return id_endereco;
+		return id_Endereco;
 	}
 
-	public void setId_Endereco(Long id_endereco) {
-		this.id_endereco = id_endereco;
+	public void setId_Endereco(Long id_Endereco) {
+		this.id_Endereco = id_Endereco;
 	}
 
 	public String getCep() {
@@ -133,6 +140,12 @@ public class Endereco {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
 
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
 }

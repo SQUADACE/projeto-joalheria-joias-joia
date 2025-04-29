@@ -1,4 +1,4 @@
-package br.com.joalheriajoiasjoia.app.service;
+package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
 
@@ -14,19 +14,23 @@ public class OrnamentoService {
 	@Autowired
 	private OrnamentoRepository ornamentoRepository;
 	
-	public Ornamento saveOrnamento(Ornamento ornamento) {
+	//Salva o ornamento
+	public Ornamento salvar(Ornamento ornamento) {
 		return ornamentoRepository.save(ornamento);
 	}
-	
-	public List<Ornamento> getAllOrnamentos(){
+
+	//Lista todos os ornamentos
+	public List<Ornamento> listarTodos(){
 		return ornamentoRepository.findAll();
 	}
 	
-	public Ornamento getOrnamentoById (Long id) {
+	//Busca ornamento por ID
+	public Ornamento buscarPorId(Long id) {
 		return ornamentoRepository.findById(id).orElse(null);
 	}
 	
-	public void deleteOrnamento(Long id) {
+	//Deleta ornamento por ID
+	public void deletarPorId(Long id) {
 		ornamentoRepository.deleteById(id);
 	}
 }
