@@ -7,6 +7,10 @@ import br.com.joalheriajoiasjoia.app.entities.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+	
+	//Busca por CPF
 	Usuario findByCpf(String cpf);
 
+	//Busca por Nome do Usuário
+	Usuario findByNomeUsuario(String nome_Usuario);
 }

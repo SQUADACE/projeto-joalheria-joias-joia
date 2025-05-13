@@ -1,6 +1,4 @@
-
-	
-	document.getElementById("cep").addEventListener("input", async function(){
+document.getElementById("cep").addEventListener("input", async function(){
 		const cep = this.value.replace(/\D/g, "");
 		
 		if (cep.length === 8){
@@ -43,7 +41,7 @@
 
         try {
 			
-            const response = await fetch("http://localhost:8080/cadastroendereco", {
+            const response = await fetch("http://localhost:8080/cadastro_endereco", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

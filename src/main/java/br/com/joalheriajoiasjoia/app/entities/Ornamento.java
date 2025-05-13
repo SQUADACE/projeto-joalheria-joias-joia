@@ -1,12 +1,13 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,21 +26,23 @@ public class Ornamento {
 	@Column(name = "descricao_Ornamento", nullable = false, length = 100)
 	private String descricao_Ornamento;
 	
-	@ManyToOne
-	@JoinColumn(name = "Produto_id_Produto")
-	private Produto produto;
+	@OneToMany(mappedBy = "ornamento")
+	private List<Ornamento_Produto> ornamentos_Produtos;
 	
 	//Construtores
 	public Ornamento() {
 		
 	}
-	public Ornamento(Long id_Ornamento, String nome_Ornamento, String descricao_Ornamento, Produto produto) {
+
+	public Ornamento(Long id_Ornamento, String nome_Ornamento, String descricao_Ornamento,
+			List<Ornamento_Produto> ornamentos_Produtos) {
+		super();
 		this.id_Ornamento = id_Ornamento;
 		this.nome_Ornamento = nome_Ornamento;
 		this.descricao_Ornamento = descricao_Ornamento;
-		this.produto = produto;
+		this.ornamentos_Produtos = ornamentos_Produtos;
 	}
-	
+
 	//Getters e Setters
 	public Long getId_Ornamento() {
 		return id_Ornamento;
@@ -59,15 +62,12 @@ public class Ornamento {
 	public void setDescricao_Ornamento(String descricao_Ornamento) {
 		this.descricao_Ornamento = descricao_Ornamento;
 	}
-	public Produto getProduto() {
-		return produto;
+
+	public List<Ornamento_Produto> getOrnamentos_Produtos() {
+		return ornamentos_Produtos;
 	}
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+
+	public void setOrnamentos_Produtos(List<Ornamento_Produto> ornamentos_Produtos) {
+		this.ornamentos_Produtos = ornamentos_Produtos;
 	}
-	
-	
-	
-	
-	
 }

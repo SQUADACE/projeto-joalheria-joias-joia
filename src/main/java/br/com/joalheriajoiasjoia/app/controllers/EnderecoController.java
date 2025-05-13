@@ -1,4 +1,4 @@
-package br.com.joalheriajoiasjoia.app.controller;
+package br.com.joalheriajoiasjoia.app.controllers;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.joalheriajoiasjoia.app.entities.Endereco;
-import br.com.joalheriajoiasjoia.app.service.EnderecoService;
+import br.com.joalheriajoiasjoia.app.services.EnderecoService;
 
 @RestController
 @RequestMapping("/cadastro_endereco")
@@ -22,28 +22,33 @@ public class EnderecoController {
 	@Autowired
 	private EnderecoService enderecoService;
 	
+	//Endpoint para salvar um novo endereço
 	@PostMapping
-	public Endereco createEndereco(@RequestBody Endereco endereco) {
-		return enderecoService.saveEndereco(endereco);
+	public Endereco criarEndereco(@RequestBody Endereco endereco) {
+		return enderecoService.salvar(endereco);
 	}
 	
+	//Endpoint para buscar todos os endereços
 	@GetMapping
-	public List<Endereco> getAllEndereco() {
-		return enderecoService.getAllEndereco();
+	public List<Endereco> buscarTodosEndereco() {
+		return enderecoService.listarTodos();
 	}
 	
+	//Endpoint para buscar um endereço por ID
 	@GetMapping("/{id}")
-	public Endereco getEndereco(@PathVariable Long id) {
-		return enderecoService.getEnderecoById(id);
+	public Endereco buscarEndereco(@PathVariable Long id) {
+		return enderecoService.buscarPorId(id);
 	}
 	
+	//Endpoint para editar um endereço
 	@PutMapping
-	public Endereco editEndereco(@RequestBody Endereco endereco) {
-		return enderecoService.saveEndereco(endereco);
+	public Endereco editarEndereco(@RequestBody Endereco endereco) {
+		return enderecoService.salvar(endereco);
 	}
 	
+	//Endpoint para deletar um endereço
 	@DeleteMapping("/{id}")
-	public void deleteEndereco(@PathVariable Long id) {
-		enderecoService.deleteEndereco(id);
+	public void deletarEndereco(@PathVariable Long id) {
+		enderecoService.deletarPorId(id);
 	}
 }

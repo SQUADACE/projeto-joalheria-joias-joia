@@ -1,4 +1,4 @@
-package br.com.joalheriajoiasjoia.app.service;
+package br.com.joalheriajoiasjoia.app.services;
 
 import java.util.List;
 
@@ -15,19 +15,23 @@ public class Categoria_ProdutoService {
 	@Autowired
 	private Categoria_ProdutoRepository categoria_ProdutoRepository;
 	
-	public Categoria_Produto saveCategoria_Produto( Categoria_Produto categoria_Produto) {
+	//Salva a categoria do produto
+	public Categoria_Produto salvar( Categoria_Produto categoria_Produto) {
 		return categoria_ProdutoRepository.save(categoria_Produto);
 	}
 	
-	public List<Categoria_Produto> getAllCategorias_Produtos(){
+	//Busca todas as categorias dos produtos
+	public List<Categoria_Produto> buscarTodas(){
 		return categoria_ProdutoRepository.findAll();
 	}
 	
-	public Categoria_Produto getCategoria_ProdutoById (Long id) {
+	//Busca a categoria do produto por ID
+	public Categoria_Produto buscaPorId(Long id) {
 		return categoria_ProdutoRepository.findById(id).orElse(null);
 	}
 	
-	public void deleteCategoria_Produto(Long id) {
+	//Deleta a categoria do produto por ID
+	public void deletarPorId(Long id) {
 		categoria_ProdutoRepository.deleteById(id);
 	}
 }
