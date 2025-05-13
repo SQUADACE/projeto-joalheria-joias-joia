@@ -56,8 +56,22 @@
                     rua,
                     numero, 
                     complemento
-                }),
-            });
+                })
+				.then(response => {
+				if (!response.ok) {
+				throw new Error('Erro ao cadastrar endereço');
+				}
+			return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
+			})
+			.then(data => {
+			// Armazena o ID da pessoa no localStorage
+			localStorage.setItem('enderecoId', data.id); // Supondo que o backend retorne { id: 1, ... }
+
+			// Redireciona para a página de cliente
+			window.location.href = '../sucesso/cadastroCliente.html';
+							})
+
+					})
 
             if (response.ok) {
                 alert("Endereço cadastrado!");
