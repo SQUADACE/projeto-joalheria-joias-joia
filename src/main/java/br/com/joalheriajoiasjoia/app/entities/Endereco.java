@@ -18,11 +18,11 @@ public class Endereco {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Endereco", nullable = false)
-	private Long id_Endereco;
+	@Column(name = "idEndereco", nullable = false)
+	private Long idEndereco;
 
-	@Column(name = "numero_Casa", nullable = false, length = 4)
-	private String numero_Casa;
+	@Column(name = "numeroCasa", nullable = false, length = 4)
+	private String numeroCasa;
 
 	@Column(name = "rua", nullable = false, length = 100)
 	private String rua;
@@ -54,10 +54,10 @@ public class Endereco {
 
 	}
 
-	public Endereco(Long id_Endereco, String numero_Casa, String rua, String bairro, String cidade, String cep,
+	public Endereco(Long idEndereco, String numeroCasa, String rua, String bairro, String cidade, String cep,
 			String uf, String complemento, List<Pedido> pedidos, Usuario usuario) {
-		this.id_Endereco = id_Endereco;
-		this.numero_Casa = numero_Casa;
+		this.idEndereco = idEndereco;
+		this.numeroCasa = numeroCasa;
 		this.rua = rua;
 		this.bairro = bairro;
 		this.cidade = cidade;
@@ -69,12 +69,12 @@ public class Endereco {
 	}
 	
 	// Getters e Setters
-	public Long getId_Endereco() {
-		return id_Endereco;
+	public Long getIdEndereco() {
+		return idEndereco;
 	}
 
-	public void setId_Endereco(Long id_Endereco) {
-		this.id_Endereco = id_Endereco;
+	public void setIdEndereco(Long idEndereco) {
+		this.idEndereco = idEndereco;
 	}
 
 	public String getCep() {
@@ -93,12 +93,12 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public String getNumero_Casa() {
-		return numero_Casa;
+	public String getNumeroCasa() {
+		return numeroCasa;
 	}
 
-	public void setNumero_Casa(String numero_Casa) {
-		this.numero_Casa = numero_Casa;
+	public void setNumeroCasa(String numeroCasa) {
+		this.numeroCasa = numeroCasa;
 	}
 
 	public String getRua() {

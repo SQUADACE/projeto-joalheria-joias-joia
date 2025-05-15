@@ -13,13 +13,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_cupom_desconto")
-public class Cupom_Desconto {
+public class CupomDesconto {
 	
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Cupom_Desconto", nullable = false)
-	private Long id_Cupom_Desconto;
+	@Column(name = "idCupomDesconto", nullable = false)
+	private Long idCupomDesconto;
 
 	@Column(name = "codigo", nullable = false)
 	private String codigo;
@@ -33,17 +33,17 @@ public class Cupom_Desconto {
 	@Column(name = "validade", nullable = false)
 	private LocalDateTime validade;
 	
-	@OneToMany(mappedBy = "cupom_Desconto")
+	@OneToMany(mappedBy = "cupomDesconto")
 	private List<Pedido> pedidos;
 	
 	//Construtores
-	public Cupom_Desconto() {
+	public CupomDesconto() {
 		
 	}
 
-	public Cupom_Desconto(Long id_Cupom_Desconto, String codigo, String descricao, Double desconto,
+	public CupomDesconto(Long idCupomDesconto, String codigo, String descricao, Double desconto,
 			LocalDateTime validade, List<Pedido> pedidos) {
-		this.id_Cupom_Desconto = id_Cupom_Desconto;
+		this.idCupomDesconto = idCupomDesconto;
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.desconto = desconto;
@@ -52,12 +52,12 @@ public class Cupom_Desconto {
 	}
 
 	//Getters e Setters
-	public Long getId_Cupom_Desconto() {
-		return id_Cupom_Desconto;
+	public Long getIdCupomDesconto() {
+		return idCupomDesconto;
 	}
 
-	public void setId_Cupom_Desconto(Long id_Cupom_Desconto) {
-		this.id_Cupom_Desconto = id_Cupom_Desconto;
+	public void setIdCupomDesconto(Long idCupomDesconto) {
+		this.idCupomDesconto = idCupomDesconto;
 	}
 
 	public String getCodigo() {

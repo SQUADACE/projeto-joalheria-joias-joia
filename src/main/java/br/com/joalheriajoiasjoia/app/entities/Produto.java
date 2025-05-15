@@ -19,70 +19,75 @@ public class Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Produto", nullable = false)
-	private Long id_Produto;
+	@Column(name = "idProduto", nullable = false)
+	private Long idProduto;
 
-	@Column(name = "nome_Produto", nullable = false, length = 100)
-	private String nome_Produto;
+	@Column(name = "nomeProduto", nullable = false, length = 100)
+	private String nomeProduto;
 
 	@Column(name = "preco", nullable = false, length = 50)
 	private Double preco;
 
-	@Column(name = "descricao_Produto", nullable = false, length = 100)
-	private String descricao_Produto;
+	@Column(name = "descricaoProduto", nullable = false, length = 100)
+	private String descricaoProduto;
 
 	@Column(name = "imgUrl", nullable = false, length = 100)
 	private String imgUrl;
 	
 	@OneToMany(mappedBy = "produto")
-	private List<Ornamento_Produto> ornamentos_Produtos;
+	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Ornamento_Produto", nullable = false)
-	private Ornamento_Produto ornamento_Produto;
+	@JoinColumn(name = "id_OrnamentoProduto", nullable = false)
+	private OrnamentoProduto ornamentoProduto;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Tipo_Produto", nullable = false)
-	private Tipo_Produto tipo_Produto;
+	@JoinColumn(name = "idPedidoProduto", nullable = false)
+	private PedidoProduto pedidoProduto;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Categoria_Produto", nullable = false)
-	private Categoria_Produto categoria_Produto;
+	@JoinColumn(name = "idTipoProduto", nullable = false)
+	private TipoProduto tipoProduto;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCategoriaProduto", nullable = false)
+	private CategoriaProduto categoriaProduto;
 
 	//Construtores
 	public Produto() {
 
 	}
 	
-	public Produto(Long id_Produto, String nome_Produto, Double preco, String descricao_Produto, String imgUrl,
-			List<Ornamento_Produto> ornamentos_Produtos, Ornamento_Produto ornamento_Produto, Tipo_Produto tipo_Produto,
-			Categoria_Produto categoria_Produto) {
-		this.id_Produto = id_Produto;
-		this.nome_Produto = nome_Produto;
+	public Produto(Long idProduto, String nomeProduto, Double preco, String descricaoProduto, String imgUrl,
+			List<OrnamentoProduto> ornamentosProdutos, OrnamentoProduto ornamentoProduto,
+			PedidoProduto pedidoProduto, TipoProduto tipoProduto, CategoriaProduto categoriaProduto) {
+		this.idProduto = idProduto;
+		this.nomeProduto = nomeProduto;
 		this.preco = preco;
-		this.descricao_Produto = descricao_Produto;
+		this.descricaoProduto = descricaoProduto;
 		this.imgUrl = imgUrl;
-		this.ornamentos_Produtos = ornamentos_Produtos;
-		this.ornamento_Produto = ornamento_Produto;
-		this.tipo_Produto = tipo_Produto;
-		this.categoria_Produto = categoria_Produto;
+		this.ornamentosProdutos = ornamentosProdutos;
+		this.ornamentoProduto = ornamentoProduto;
+		this.pedidoProduto = pedidoProduto;
+		this.tipoProduto = tipoProduto;
+		this.categoriaProduto = categoriaProduto;
 	}
 
 	//Getters e Setters
-	public Long getId_Produto() {
-		return id_Produto;
+	public Long getIdProduto() {
+		return idProduto;
 	}
 
-	public void setId_Produto(Long id_Produto) {
-		this.id_Produto = id_Produto;
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
 	}
 
-	public String getNome_Produto() {
-		return nome_Produto;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNome_Produto(String nome_Produto) {
-		this.nome_Produto = nome_Produto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public Double getPreco() {
@@ -93,12 +98,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getDescricao_Produto() {
-		return descricao_Produto;
+	public String getDescricaoProduto() {
+		return descricaoProduto;
 	}
 
-	public void setDescricao_Produto(String descricao_Produto) {
-		this.descricao_Produto = descricao_Produto;
+	public void setDescricaoProduto(String descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
 	}
 
 	public String getImgUrl() {
@@ -109,35 +114,43 @@ public class Produto {
 		this.imgUrl = imgUrl;
 	}
 
-	public List<Ornamento_Produto> getOrnamentos_Produtos() {
-		return ornamentos_Produtos;
+	public List<OrnamentoProduto> getOrnamentosProdutos() {
+		return ornamentosProdutos;
 	}
 
-	public void setOrnamentos_Produtos(List<Ornamento_Produto> ornamentos_Produtos) {
-		this.ornamentos_Produtos = ornamentos_Produtos;
+	public void setOrnamentosProdutos(List<OrnamentoProduto> ornamentosProdutos) {
+		this.ornamentosProdutos = ornamentosProdutos;
 	}
 
-	public Ornamento_Produto getOrnamento_Produto() {
-		return ornamento_Produto;
+	public OrnamentoProduto getOrnamentoProduto() {
+		return ornamentoProduto;
 	}
 
-	public void setOrnamento_Produto(Ornamento_Produto ornamento_Produto) {
-		this.ornamento_Produto = ornamento_Produto;
+	public void setOrnamentoProduto(OrnamentoProduto ornamentoProduto) {
+		this.ornamentoProduto = ornamentoProduto;
 	}
 
-	public Tipo_Produto getTipo_Produto() {
-		return tipo_Produto;
+	public PedidoProduto getPedidoProduto() {
+		return pedidoProduto;
 	}
 
-	public void setTipo_Produto(Tipo_Produto tipo_Produto) {
-		this.tipo_Produto = tipo_Produto;
+	public void setPedidoProduto(PedidoProduto pedidoProduto) {
+		this.pedidoProduto = pedidoProduto;
 	}
 
-	public Categoria_Produto getCategoria_Produto() {
-		return categoria_Produto;
+	public TipoProduto getTipoProduto() {
+		return tipoProduto;
 	}
 
-	public void setCategoria_Produto(Categoria_Produto categoria_Produto) {
-		this.categoria_Produto = categoria_Produto;
+	public void setTipoProduto(TipoProduto tipoProduto) {
+		this.tipoProduto = tipoProduto;
 	}
+
+	public CategoriaProduto getCategoriaProduto() {
+		return categoriaProduto;
+	}
+
+	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
+		this.categoriaProduto = categoriaProduto;
+	}	
 }

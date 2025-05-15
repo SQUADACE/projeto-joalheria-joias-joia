@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const nome_Produto = document.getElementById("nome_Produto").value;
+        const nomeProduto = document.getElementById("nomeProduto").value;
         const preco = document.getElementById("preco").value;
-        const nome_Ornamento = document.getElementById("nome_Ornamento").value;
+        const nomeOrnamento = document.getElementById("nomeOrnamento").value;
 		const img_url = document.getElementById("img_url").value;
-		const categoria_Produto = parseInt(document.getElementById("categoria_Produto").value);
-		const tipo_Produto = parseInt(document.getElementById("tipo_Produto").value);
+		const categoriaProduto = parseInt(document.getElementById("categoriaProduto").value);
+		const tipoProduto = parseInt(document.getElementById("tipoProduto").value);
 		
 
         try {
@@ -21,15 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    nome_Produto,
+                    nomeProduto,
                     preco,
-                    nome_Ornamento,
+                    nomeOrnamento,
 					img_url,
-					categoria_Produto: {
-					                   id: categoria_Produto
+					categoriaProduto: {
+					                   id: categoriaProduto
 					               }, 
-					tipo_Produto: {
-					                   id: tipo_Produto
+					tipoProduto: {
+					                   id: tipoProduto
 					               }
                 }),
             });

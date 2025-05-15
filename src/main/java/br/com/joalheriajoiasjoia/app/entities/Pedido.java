@@ -20,11 +20,11 @@ public class Pedido {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Pedido", nullable = false)
-	private Long id_Pedido;
+	@Column(name = "idPedido", nullable = false)
+	private Long idPedido;
 	
-	@Column(name = "data_Pedido", nullable = false, unique = true, length = 50)
-	private LocalDateTime data_Pedido;
+	@Column(name = "dataPedido", nullable = false, unique = true, length = 50)
+	private LocalDateTime dataPedido;
 
 	@Column(name = "status", nullable = false, unique = false, length = 15)
 	private String status;
@@ -33,21 +33,18 @@ public class Pedido {
 	private Double total;
 	
 	@OneToMany(mappedBy = "pedido")
-	private List<Pedido_Produto> pedidos_Produtos;
-	
-	@OneToMany(mappedBy = "pedido")
-	private List<Pagamento> pagamentos;
+	private List<PedidoProduto> pedidosProdutos;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Endereco", nullable = false)
+	@JoinColumn(name = "idEndereco", nullable = false)
 	private Endereco endereco;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Cupom_Desconto", nullable = false)
-	private Cupom_Desconto cupom_Desconto;
+	@JoinColumn(name = "idCupomDesconto", nullable = false)
+	private CupomDesconto cupomDesconto;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Usuario", nullable = false)
+	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 	
 	//Construtores
@@ -55,35 +52,34 @@ public class Pedido {
 		
 	}
 
-	public Pedido(Long id_Pedido, LocalDateTime data_Pedido, String status, Double total,
-			List<Pedido_Produto> pedidos_Produtos, List<Pagamento> pagamentos, Endereco endereco,
-			Cupom_Desconto cupom_Desconto, Usuario usuario) {
-		this.id_Pedido = id_Pedido;
-		this.data_Pedido = data_Pedido;
+	public Pedido(Long idPedido, LocalDateTime dataPedido, String status, Double total,
+			List<PedidoProduto> pedidosProdutos, Endereco endereco, CupomDesconto cupomDesconto, 
+			Usuario usuario) {
+		this.idPedido = idPedido;
+		this.dataPedido = dataPedido;
 		this.status = status;
 		this.total = total;
-		this.pedidos_Produtos = pedidos_Produtos;
-		this.pagamentos = pagamentos;
+		this.pedidosProdutos = pedidosProdutos;
 		this.endereco = endereco;
-		this.cupom_Desconto = cupom_Desconto;
+		this.cupomDesconto = cupomDesconto;
 		this.usuario = usuario;
 	}
 
 	//Getters e Setters
-	public Long getId_Pedido() {
-		return id_Pedido;
+	public Long getIdPedido() {
+		return idPedido;
 	}
 
-	public void setId_Pedido(Long id_Pedido) {
-		this.id_Pedido = id_Pedido;
+	public void setIdPedido(Long idPedido) {
+		this.idPedido = idPedido;
 	}
 
-	public LocalDateTime getData_Pedido() {
-		return data_Pedido;
+	public LocalDateTime getDataPedido() {
+		return dataPedido;
 	}
 
-	public void setData_Pedido(LocalDateTime data_Pedido) {
-		this.data_Pedido = data_Pedido;
+	public void setDataPedido(LocalDateTime dataPedido) {
+		this.dataPedido = dataPedido;
 	}
 
 	public String getStatus() {
@@ -102,20 +98,12 @@ public class Pedido {
 		this.total = total;
 	}
 
-	public List<Pedido_Produto> getPedidos_Produtos() {
-		return pedidos_Produtos;
+	public List<PedidoProduto> getPedidosProdutos() {
+		return pedidosProdutos;
 	}
 
-	public void setPedidos_Produtos(List<Pedido_Produto> pedidos_Produtos) {
-		this.pedidos_Produtos = pedidos_Produtos;
-	}
-
-	public List<Pagamento> getPagamentos() {
-		return pagamentos;
-	}
-
-	public void setPagamentos(List<Pagamento> pagamentos) {
-		this.pagamentos = pagamentos;
+	public void setPedidosProdutos(List<PedidoProduto> pedidosProdutos) {
+		this.pedidosProdutos = pedidosProdutos;
 	}
 
 	public Endereco getEndereco() {
@@ -126,12 +114,12 @@ public class Pedido {
 		this.endereco = endereco;
 	}
 
-	public Cupom_Desconto getCupom_Desconto() {
-		return cupom_Desconto;
+	public CupomDesconto getCupomDesconto() {
+		return cupomDesconto;
 	}
 
-	public void setCupom_Desconto(Cupom_Desconto cupom_Desconto) {
-		this.cupom_Desconto = cupom_Desconto;
+	public void setCupomDesconto(CupomDesconto cupomDesconto) {
+		this.cupomDesconto = cupomDesconto;
 	}
 
 	public Usuario getUsuario() {

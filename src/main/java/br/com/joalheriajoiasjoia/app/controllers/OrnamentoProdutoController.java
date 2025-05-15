@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joalheriajoiasjoia.app.entities.Ornamento_Produto;
-import br.com.joalheriajoiasjoia.app.services.Ornamento_ProdutoService;
+import br.com.joalheriajoiasjoia.app.entities.OrnamentoProduto;
+import br.com.joalheriajoiasjoia.app.services.OrnamentoProdutoService;
 
 @RestController
 @RequestMapping("/ornamentos_produtos")
-public class Ornamento_ProdutoController {
+public class OrnamentoProdutoController {
 
 	@Autowired
-    private Ornamento_ProdutoService ornamento_ProdutoService;
+    private OrnamentoProdutoService ornamentoProdutoService;
 
     //Endpoint para salvar um novo ornamento de produto
     @PostMapping
-    public Ornamento_Produto salvarOrnamento_Produto(@RequestBody Ornamento_Produto ornamento_Produto) {
-        return ornamento_ProdutoService.salvar(ornamento_Produto);
+    public OrnamentoProduto salvarOrnamentoProduto(@RequestBody OrnamentoProduto ornamentoProduto) {
+        return ornamentoProdutoService.salvar(ornamentoProduto);
     }
 
     //Endpoint para listar todos os ornamentos de produtos
     @GetMapping
-    public List<Ornamento_Produto> listarOrnamentos_Produtos() {
-        return ornamento_ProdutoService.listarTodas();
+    public List<OrnamentoProduto> listarOrnamentosProdutos() {
+        return ornamentoProdutoService.listarTodas();
     }
 
     //Endpoint para buscar um ornamento de produto por ID
     @GetMapping("/{id}")
-    public Ornamento_Produto buscarOrnamento_ProdutoPorId(@PathVariable Long id) {
-        return ornamento_ProdutoService.buscarPorId(id);
+    public OrnamentoProduto buscarOrnamentoProdutoPorId(@PathVariable Long id) {
+        return ornamentoProdutoService.buscarPorId(id);
     }
     
     //Endpoint para editar um ornamento de produto
   	@PutMapping
-  	public Ornamento_Produto editarOrnamento_Produto(@RequestBody Ornamento_Produto ornamento_Produto) {
-  		return ornamento_ProdutoService.salvar(ornamento_Produto);
+  	public OrnamentoProduto editarOrnamentoProduto(@RequestBody OrnamentoProduto ornamentoProduto) {
+  		return ornamentoProdutoService.salvar(ornamentoProduto);
   	}
 
     //Endpoint para deletar um ornamento de produto por ID
     @DeleteMapping("/{id}")
-    public void deletarOrnamento_Produto(@PathVariable Long id) {
-    	ornamento_ProdutoService.deletarPorId(id);
+    public void deletarOrnamentoProduto(@PathVariable Long id) {
+    	ornamentoProdutoService.deletarPorId(id);
     }
 }

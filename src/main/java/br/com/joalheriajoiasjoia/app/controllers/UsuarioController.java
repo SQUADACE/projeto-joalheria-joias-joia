@@ -52,7 +52,7 @@ public class UsuarioController {
     public Usuario login(@RequestBody Usuario loginRequest) {
     	
     	//Chama o serviço para verificar as credenciais
-    	Usuario usuario = usuarioService.autenticarUsuario(loginRequest.getNome_Usuario(), loginRequest.getSenha());
+    	Usuario usuario = usuarioService.autenticarUsuario(loginRequest.getNomeUsuario(), loginRequest.getSenha());
     	
     	if(usuario != null) {
     		return usuario;
