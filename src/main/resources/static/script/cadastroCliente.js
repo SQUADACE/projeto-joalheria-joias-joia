@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							
 			const data = await response.json();
 			// Armazena o ID do cliente no localStorage
-			localStorage.setItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
+			localStorage.setItem('clienteId', data.idUsuario); // Supondo que o backend retorne { id: 1, ... }
 			window.location.href = "cadastroendereco.html";
 
 			} catch (error) {

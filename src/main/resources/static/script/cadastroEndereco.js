@@ -1,4 +1,4 @@
-
+document.addEventListener ("DOMContentLoaded",() => { 
 	
 	document.getElementById("cep").addEventListener("input", async function(){
 		const cep = this.value.replace(/\D/g, "");
@@ -27,7 +27,7 @@
 		}
 	})
 	
-	document.addEventListener("DOMContentLoaded", () => {
+	//document.addEventListener("DOMContentLoaded", () => {
 		const form = document.getElementById("cadastroendereco");
 		
     form.addEventListener("submit", async (event) => {
@@ -66,7 +66,7 @@
 			.then(data => {
 				alert('Cadastro feito com sucesso.')
 				// Armazena o ID do endereço no localStorage
-				localStorage.removeItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
+				localStorage.removeItem('clienteId', data.idUsuario); // Supondo que o backend retorne { id: 1, ... }
 				// Redireciona para a página de inicial
 				window.location.href = '../sucesso/index.html';
 					})
@@ -78,4 +78,4 @@
 			alert('Falha ao cadastrar. Tente novamente.');
         }
     });
-});
+})
