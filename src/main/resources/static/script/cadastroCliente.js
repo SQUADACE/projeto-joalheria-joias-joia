@@ -30,8 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
 						id_tipo_Usuario: 2
 					}
 	
-				}),
-			});
+				})
+				.then(response => {
+				if (!response.ok) {
+				throw new Error('Erro ao cadastrar cliente');
+								}
+		return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
+							})
+		.then(data => {
+		// Armazena o ID do cliente no localStorage
+		localStorage.setItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
+
+			// Redireciona para a página de cliente
+			window.location.href = '../sucesso/cadastroCliente.html';
+											})
+
+									})
 
 			if (response.ok) {
 				alert("Usuário cadastrado com sucesso!");

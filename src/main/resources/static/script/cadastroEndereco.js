@@ -1,4 +1,6 @@
-document.getElementById("cep").addEventListener("input", async function(){
+
+	
+	document.getElementById("cep").addEventListener("input", async function(){
 		const cep = this.value.replace(/\D/g, "");
 		
 		if (cep.length === 8){
@@ -41,7 +43,7 @@ document.getElementById("cep").addEventListener("input", async function(){
 
         try {
 			
-            const response = await fetch("http://localhost:8080/cadastro_endereco", {
+            const response = await fetch("http://localhost:8080/cadastroendereco", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -62,7 +64,7 @@ document.getElementById("cep").addEventListener("input", async function(){
 			return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
 			})
 			.then(data => {
-			// Armazena o ID da pessoa no localStorage
+			// Armazena o ID do endereço no localStorage
 			localStorage.setItem('enderecoId', data.id); // Supondo que o backend retorne { id: 1, ... }
 
 			// Redireciona para a página de cliente
