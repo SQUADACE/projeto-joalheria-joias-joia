@@ -57,29 +57,25 @@
                     numeroCasa, 
                     complemento
                 })
-				.then(response => {
+			.then(response => {
 				if (!response.ok) {
-				throw new Error('Erro ao cadastrar endereço');
+					throw new Error('Erro ao cadastrar endereço');
 				}
-			return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
+				return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
 			})
 			.then(data => {
-			// Armazena o ID do endereço no localStorage
-			localStorage.setItem('enderecoId', data.id); // Supondo que o backend retorne { id: 1, ... }
-
-			// Redireciona para a página de inicial
-			window.location.href = '../sucesso/index.html';
-							})
-
+				alert('Cadastro feito com sucesso.')
+				// Armazena o ID do endereço no localStorage
+				localStorage.removeItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
+				// Redireciona para a página de inicial
+				window.location.href = '../sucesso/index.html';
 					})
 
-            if (response.ok) {
-                alert("Endereço cadastrado!");
-            } else {
-                alert("Falha ao cadastrar endereço ;(");
-            }
+				})
+
         } catch (error) {
             console.error("Erro ao cadastrar endereço: ", error);
+			alert('Falha ao cadastrar. Tente novamente.');
         }
     });
 });

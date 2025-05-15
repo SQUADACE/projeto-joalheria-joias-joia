@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	form.addEventListener("submit", async (event) => {
 		event.preventDefault();
 
-		const nomeUsuario = document.getElementById("nomeUsuario").value;
+		const nome_usuario = document.getElementById("nome_usuario").value;
 		const cpf = document.getElementById("cpf").value;
 		const email = document.getElementById("email").value;
 		const telefone = document.getElementById("telefone").value;
-		const dataNascimento = document.getElementById("dataNascimento").value;
+		const data_nascimento = document.getElementById("data_nascimento").value;
 		const senha = document.getElementById("senha").value;
 		
 		try {
@@ -20,39 +20,32 @@ document.addEventListener("DOMContentLoaded", () => {
 					"Content-Type": "application/json"
 				},
 				body: JSON.stringify({
-					nomeUsuario,
+					nome_usuario,
 					cpf,
 					email,
 					telefone,
-					dataNascimento,
+					data_nascimento,
 					senha,
 					tipoUsuario:{
 						idTipoUsuario: 2
 					}
 	
 				})
-				.then(response => {
-				if (!response.ok) {
+			});
+				
+			if (!response.ok) {
 				throw new Error('Erro ao cadastrar cliente');
-								}
-		return response.json(); // Pega o corpo da resposta (esperando que venha o objeto com id)
-							})
-		.then(data => {
-		// Armazena o ID do cliente no localStorage
-		localStorage.setItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
-			
-											})
-
-									})
-
-			if (response.ok) {
-				alert("Usuário cadastrado com sucesso!");
-				window.location.href = "cadastroendereco.html";
-			} else {
-				alert("Erro ao cadastrar o usuário");
 			}
-		} catch (error) {
+
+							
+			const data = await response.json();
+			// Armazena o ID do cliente no localStorage
+			localStorage.setItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
+			window.location.href = "cadastroendereco.html";
+
+			} catch (error) {
 			console.error("Erro ao Cadastrar o usuário:", error);
+			alert('Falha ao cadastrar cliente. Tente novamente.')
 		}
 
 	});
