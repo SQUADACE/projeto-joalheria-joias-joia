@@ -14,55 +14,55 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_pedido_produto")
-public class Pedido_Produto {
+public class PedidoProduto {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Pedido_Produto", nullable = false)
-	private Long id_Pedido_Produto;
+	@Column(name = "idPedidoProduto", nullable = false)
+	private Long idPedidoProduto;
 	
-	@Column(name = "preco_Unitario", nullable = false, unique = true, length = 50)
-	private String preco_Unitario;
+	@Column(name = "precoUnitario", nullable = false, unique = true, length = 50)
+	private String precoUnitario;
 
 	@Column(name = "quantidade", nullable = false, unique = false, length = 15)
 	private Integer quantidade;
 	
 	@ManyToOne
-	@JoinColumn(name = "PEDIDO_id_Pedido", nullable = false)
+	@JoinColumn(name = "idPedido", nullable = false)
 	private Pedido pedido;
 	
-	@OneToMany(mappedBy = "pedido_Produto")
+	@OneToMany(mappedBy = "pedidoProduto")
 	private List<Produto> produtos;
 	
 	//Construtores
-	public Pedido_Produto() {
+	public PedidoProduto() {
 		
 	}
 
-	public Pedido_Produto(Long id_Pedido_Produto, String preco_Unitario, Integer quantidade, Pedido pedido,
+	public PedidoProduto(Long idPedidoProduto, String precoUnitario, Integer quantidade, Pedido pedido,
 			List<Produto> produtos) {
-		this.id_Pedido_Produto = id_Pedido_Produto;
-		this.preco_Unitario = preco_Unitario;
+		this.idPedidoProduto = idPedidoProduto;
+		this.precoUnitario = precoUnitario;
 		this.quantidade = quantidade;
 		this.pedido = pedido;
 		this.produtos = produtos;
 	}
 
 	//Getters e Setters
-	public Long getId_Pedido_Produto() {
-		return id_Pedido_Produto;
+	public Long getIdPedidoProduto() {
+		return idPedidoProduto;
 	}
 
-	public void setId_Pedido_Produto(Long id_Pedido_Produto) {
-		this.id_Pedido_Produto = id_Pedido_Produto;
+	public void setIdPedidoProduto(Long idPedidoProduto) {
+		this.idPedidoProduto = idPedidoProduto;
 	}
 
-	public String getPreco_Unitario() {
-		return preco_Unitario;
+	public String getPrecoUnitario() {
+		return precoUnitario;
 	}
 
-	public void setPreco_Unitario(String preco_Unitario) {
-		this.preco_Unitario = preco_Unitario;
+	public void setPrecoUnitario(String precoUnitario) {
+		this.precoUnitario = precoUnitario;
 	}
 
 	public Integer getQuantidade() {

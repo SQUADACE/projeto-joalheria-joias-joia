@@ -12,43 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joalheriajoiasjoia.app.entities.Pedido_Produto;
-import br.com.joalheriajoiasjoia.app.services.Pedido_ProdutoService;
+import br.com.joalheriajoiasjoia.app.entities.PedidoProduto;
+import br.com.joalheriajoiasjoia.app.services.PedidoProdutoService;
 
 @RestController
 @RequestMapping("/pedidos_produtos")
-public class Pedido_ProdutoController {
+public class PedidoProdutoController {
 
 	@Autowired
-    private Pedido_ProdutoService pedido_ProdutoService;
+    private PedidoProdutoService pedidoProdutoService;
 
     //Endpoint para salvar um novo pedido de produto
     @PostMapping
-    public Pedido_Produto salvarPedido_Produto(@RequestBody Pedido_Produto pedido_Produto) {
-        return pedido_ProdutoService.salvar(pedido_Produto);
+    public PedidoProduto salvarPedidoProduto(@RequestBody PedidoProduto pedidoProduto) {
+        return pedidoProdutoService.salvar(pedidoProduto);
     }
 
     //Endpoint para listar todos os pedidos de produtos
     @GetMapping
-    public List<Pedido_Produto> listarPedidos_Produtos() {
-        return pedido_ProdutoService.listarTodos();
+    public List<PedidoProduto> listarPedidosProdutos() {
+        return pedidoProdutoService.listarTodos();
     }
 
     //Endpoint para buscar um pedido de produto por ID
     @GetMapping("/{id}")
-    public Pedido_Produto buscarPedido_ProdutoPorId(@PathVariable Long id) {
-        return pedido_ProdutoService.buscarPorId(id);
+    public PedidoProduto buscarPedidoProdutoPorId(@PathVariable Long id) {
+        return pedidoProdutoService.buscarPorId(id);
     }
     
     //Endpoint para editar um pedido de produto
   	@PutMapping
-  	public Pedido_Produto editarPedido_Produto(@RequestBody Pedido_Produto pedido_Produto) {
-  		return pedido_ProdutoService.salvar(pedido_Produto);
+  	public PedidoProduto editarPedidoProduto(@RequestBody PedidoProduto pedidoProduto) {
+  		return pedidoProdutoService.salvar(pedidoProduto);
   	}
 
     //Endpoint para deletar um pedido de produto por ID
     @DeleteMapping("/{id}")
-    public void deletarPedido_Produto(@PathVariable Long id) {
-    	pedido_ProdutoService.deletarPorId(id);
+    public void deletarPedidoProduto(@PathVariable Long id) {
+    	pedidoProdutoService.deletarPorId(id);
     }
 }

@@ -11,12 +11,12 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_ornamento_produto")
-public class Ornamento_Produto {
+public class OrnamentoProduto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Ornamento_Produto", nullable = false)
-	private Long id_Ornamento_Produto;
+	@Column(name = "idOrnamentoProduto", nullable = false)
+	private Long idOrnamentoProduto;
 
 	@Column(name = "nome", nullable = false)
 	private String nome;
@@ -25,21 +25,21 @@ public class Ornamento_Produto {
 	private String descricao;
 	
 	@ManyToOne
-	@JoinColumn(name = "ORNAMENTO_id_Ornamento", nullable = false)
+	@JoinColumn(name = "idOrnamento", nullable = false)
 	private Ornamento ornamento;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Produto", nullable = false)
+	@JoinColumn(name = "idProduto", nullable = false)
 	private Produto produto;
 
 	//Construtores
-	public Ornamento_Produto() {
+	public OrnamentoProduto() {
 		
 	}
 
-	public Ornamento_Produto(Long id_Ornamento_Produto, String nome, String descricao, Ornamento ornamento,
+	public OrnamentoProduto(Long idOrnamentoProduto, String nome, String descricao, Ornamento ornamento,
 			Produto produto) {
-		this.id_Ornamento_Produto = id_Ornamento_Produto;
+		this.idOrnamentoProduto = idOrnamentoProduto;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.ornamento = ornamento;
@@ -47,12 +47,12 @@ public class Ornamento_Produto {
 	}
 
 	//Getters e Setters
-	public Long getId_Ornamento_Produto() {
-		return id_Ornamento_Produto;
+	public Long getIdOrnamentoProduto() {
+		return idOrnamentoProduto;
 	}
 
-	public void setId_Ornamento_Produto(Long id_Ornamento_Produto) {
-		this.id_Ornamento_Produto = id_Ornamento_Produto;
+	public void setIdOrnamentoProduto(Long idOrnamentoProduto) {
+		this.idOrnamentoProduto = idOrnamentoProduto;
 	}
 
 	public String getNome() {

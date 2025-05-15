@@ -17,13 +17,13 @@ public class Tipo_Usuario {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Tipo_Usuario", nullable = false)
-	private Long id_Tipo_Usuario;
+	@Column(name = "idTipoUsuario", nullable = false)
+	private Long idTipoUsuario;
 
-	@Column(name = "nome_Tipo_Usuario", nullable = false, length = 100)
-	private String nome_Tipo_Usuario;
+	@Column(name = "nomeTipoUsuario", nullable = false, length = 100)
+	private String nomeTipoUsuario;
 	
-	@OneToMany(mappedBy = "tipo_Usuario")
+	@OneToMany(mappedBy = "tipoUsuario")
 	private List<Usuario> usuarios;
 	
 	//Construtores
@@ -31,27 +31,27 @@ public class Tipo_Usuario {
 		
 	}
 
-	public Tipo_Usuario(Long id_Tipo_Usuario, String nome_Tipo_Usuario, List<Usuario> usuarios) {
-		this.id_Tipo_Usuario = id_Tipo_Usuario;
-		this.nome_Tipo_Usuario = nome_Tipo_Usuario;
+	public Tipo_Usuario(Long idTipoUsuario, String nomeTipoUsuario, List<Usuario> usuarios) {
+		this.idTipoUsuario = idTipoUsuario;
+		this.nomeTipoUsuario = nomeTipoUsuario;
 		this.usuarios = usuarios;
 	}
 
 	//Getters e Setters
-	public Long getId_Tipo_Usuario() {
-		return id_Tipo_Usuario;
+	public Long getIdTipoUsuario() {
+		return idTipoUsuario;
 	}
 
-	public void setId_Tipo_Usuario(Long id_Tipo_Usuario) {
-		this.id_Tipo_Usuario = id_Tipo_Usuario;
+	public void setIdTipoUsuario(Long idTipoUsuario) {
+		this.idTipoUsuario = idTipoUsuario;
 	}
 
-	public String getNome_Tipo_Usuario() {
-		return nome_Tipo_Usuario;
+	public String getNomeTipoUsuario() {
+		return nomeTipoUsuario;
 	}
 
-	public void setNome_Tipo_Usuario(String nome_Tipo_Usuario) {
-		this.nome_Tipo_Usuario = nome_Tipo_Usuario;
+	public void setNomeTipoUsuario(String nomeTipoUsuario) {
+		this.nomeTipoUsuario = nomeTipoUsuario;
 	}
 
 	public List<Usuario> getUsuarios() {
@@ -61,5 +61,4 @@ public class Tipo_Usuario {
 	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
-	
 }

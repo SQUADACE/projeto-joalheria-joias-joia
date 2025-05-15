@@ -38,7 +38,7 @@
         const cidade = document.getElementById("cidade").value;
         const bairro = document.getElementById("bairro").value;
         const rua = document.getElementById("rua").value;
-        const numero = document.getElementById("numero").value;
+        const numeroCasa = document.getElementById("numeroCasa").value;
         const complemento = document.getElementById("complemento").value;
 
         try {
@@ -54,7 +54,7 @@
                     cidade,
                     bairro,
                     rua,
-                    numero, 
+                    numeroCasa, 
                     complemento
                 })
 				.then(response => {

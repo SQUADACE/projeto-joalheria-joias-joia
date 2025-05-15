@@ -17,57 +17,61 @@ public class Ornamento {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_Ornamento", nullable = false)
-	private Long id_Ornamento;
+	@Column(name = "idOrnamento", nullable = false)
+	private Long idOrnamento;
 	
-	@Column(name = "nome_Ornamento", nullable = false, length = 100)
-	private String nome_Ornamento;
+	@Column(name = "nomeOrnamento", nullable = false, length = 100)
+	private String nomeOrnamento;
 	
-	@Column(name = "descricao_Ornamento", nullable = false, length = 100)
-	private String descricao_Ornamento;
+	@Column(name = "descricaoOrnamento", nullable = false, length = 100)
+	private String descricaoOrnamento;
 	
 	@OneToMany(mappedBy = "ornamento")
-	private List<Ornamento_Produto> ornamentos_Produtos;
+	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	//Construtores
 	public Ornamento() {
 		
 	}
 
-	public Ornamento(Long id_Ornamento, String nome_Ornamento, String descricao_Ornamento,
-			List<Ornamento_Produto> ornamentos_Produtos) {
-		super();
-		this.id_Ornamento = id_Ornamento;
-		this.nome_Ornamento = nome_Ornamento;
-		this.descricao_Ornamento = descricao_Ornamento;
-		this.ornamentos_Produtos = ornamentos_Produtos;
+	public Ornamento(Long idOrnamento, String nomeOrnamento, String descricaoOrnamento,
+			List<OrnamentoProduto> ornamentosProdutos) {
+		this.idOrnamento = idOrnamento;
+		this.nomeOrnamento = nomeOrnamento;
+		this.descricaoOrnamento = descricaoOrnamento;
+		this.ornamentosProdutos = ornamentosProdutos;
 	}
 
 	//Getters e Setters
-	public Long getId_Ornamento() {
-		return id_Ornamento;
-	}
-	public void setId_Ornamento(Long id_Ornamento) {
-		this.id_Ornamento = id_Ornamento;
-	}
-	public String getNome_Ornamento() {
-		return nome_Ornamento;
-	}
-	public void setNome_Ornamento(String nome_Ornamento) {
-		this.nome_Ornamento = nome_Ornamento;
-	}
-	public String getDescricao_Ornamento() {
-		return descricao_Ornamento;
-	}
-	public void setDescricao_Ornamento(String descricao_Ornamento) {
-		this.descricao_Ornamento = descricao_Ornamento;
+	public Long getIdOrnamento() {
+		return idOrnamento;
 	}
 
-	public List<Ornamento_Produto> getOrnamentos_Produtos() {
-		return ornamentos_Produtos;
+	public void setIdOrnamento(Long idOrnamento) {
+		this.idOrnamento = idOrnamento;
 	}
 
-	public void setOrnamentos_Produtos(List<Ornamento_Produto> ornamentos_Produtos) {
-		this.ornamentos_Produtos = ornamentos_Produtos;
+	public String getNomeOrnamento() {
+		return nomeOrnamento;
+	}
+
+	public void setNomeOrnamento(String nomeOrnamento) {
+		this.nomeOrnamento = nomeOrnamento;
+	}
+
+	public String getDescricaoOrnamento() {
+		return descricaoOrnamento;
+	}
+
+	public void setDescricaoOrnamento(String descricaoOrnamento) {
+		this.descricaoOrnamento = descricaoOrnamento;
+	}
+
+	public List<OrnamentoProduto> getOrnamentosProdutos() {
+		return ornamentosProdutos;
+	}
+
+	public void setOrnamentosProdutos(List<OrnamentoProduto> ornamentosProdutos) {
+		this.ornamentosProdutos = ornamentosProdutos;
 	}
 }

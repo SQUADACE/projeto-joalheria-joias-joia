@@ -3,9 +3,9 @@ package br.com.joalheriajoiasjoia.app.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.joalheriajoiasjoia.app.entities.Tipo_Usuario;
+import br.com.joalheriajoiasjoia.app.entities.TipoProduto;
 
 @Repository
-public interface Tipo_UsuarioRepository extends JpaRepository<Tipo_Usuario, Long>{
+public interface TipoProdutoRepository extends JpaRepository<TipoProduto, Long>{
 
 }

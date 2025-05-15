@@ -12,44 +12,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joalheriajoiasjoia.app.entities.Tipo_Produto;
-import br.com.joalheriajoiasjoia.app.services.Tipo_ProdutoService;
+import br.com.joalheriajoiasjoia.app.entities.TipoProduto;
+import br.com.joalheriajoiasjoia.app.services.TipoProdutoService;
 
 
 @RestController
 @RequestMapping("/cadastro_tipo_produto")
-public class Tipo_ProdutoController {
+public class TipoProdutoController {
 
 	@Autowired
-	private Tipo_ProdutoService tipo_ProdutoService;
+	private TipoProdutoService tipoProdutoService;
 
 	//Endpoint para salvar um tipo de produto
 	@PostMapping
-	public Tipo_Produto criarTipo_Produto(@RequestBody Tipo_Produto tipo_Produto) {
-		return tipo_ProdutoService.salvar(tipo_Produto);
+	public TipoProduto criarTipoProduto(@RequestBody TipoProduto tipoProduto) {
+		return tipoProdutoService.salvar(tipoProduto);
 	}
 
 	//Endpoint para buscar todos os tipos de produtos
 	@GetMapping
-	public List<Tipo_Produto> buscarTodosTipos_Produtos() {
-		return tipo_ProdutoService.listarTodos();
+	public List<TipoProduto> buscarTodosTiposProdutos() {
+		return tipoProdutoService.listarTodos();
 	}
 
 	//Endpoint para buscar um tipo de produto por ID
 	@GetMapping("/{id}")
-	public Tipo_Produto buscarPorIdTipo_Produto(@PathVariable Long id) {
-		return tipo_ProdutoService.buscarPorId(id);
+	public TipoProduto buscarPorIdTipoProduto(@PathVariable Long id) {
+		return tipoProdutoService.buscarPorId(id);
 	}
 
 	//Endpoint para editar um tipo de produto
 	@PutMapping
-	public Tipo_Produto editarTipo_Produto(@RequestBody Tipo_Produto tipo_Produto) {
-		return tipo_ProdutoService.salvar(tipo_Produto);
+	public TipoProduto editarTipoProduto(@RequestBody TipoProduto tipoProduto) {
+		return tipoProdutoService.salvar(tipoProduto);
 	}
 
 	//Endpoint para deletar um tipo de produto
 	@DeleteMapping("/{id}")
-	public void deletarTipo_Produto(@PathVariable Long id) {
-		tipo_ProdutoService.deletarPorId(id);
+	public void deletarTipoProduto(@PathVariable Long id) {
+		tipoProdutoService.deletarPorId(id);
 	}
 }
