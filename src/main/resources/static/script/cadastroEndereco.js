@@ -67,8 +67,8 @@
 			// Armazena o ID do endereço no localStorage
 			localStorage.setItem('enderecoId', data.id); // Supondo que o backend retorne { id: 1, ... }
 
-			// Redireciona para a página de cliente
-			window.location.href = '../sucesso/cadastroCliente.html';
+			// Redireciona para a página de inicial
+			window.location.href = '../sucesso/index.html';
 							})
 
 					})

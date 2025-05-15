@@ -40,9 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		.then(data => {
 		// Armazena o ID do cliente no localStorage
 		localStorage.setItem('clienteId', data.id); // Supondo que o backend retorne { id: 1, ... }
-
-			// Redireciona para a página inicial
-			window.location.href = '../sucesso/index.html';
+			
 											})
 
 									})
