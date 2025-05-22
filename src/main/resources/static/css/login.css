@@ -1,0 +1,52 @@
+body{
+         background-image: url(../img/Design.png);
+    }
+
+    form {
+		font-family: Arial, sans-serif;
+		max-width: 400px;
+		margin: 100px auto;
+		padding: 20px;
+		border: 1px solid #e684ea;
+		border-radius: 8px;
+		background-color: #e69cf7;
+         opacity: 0.9;
+	}
+
+	h2 {
+         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+         color: #3c0d45;
+		text-align: center;
+	}
+
+	label {
+		display: block;
+		margin-top: 10px;
+		font-weight: bold;
+	}
+
+	input[type="email"],
+	input[type="password"] {
+		width: 100%;
+		padding: 8px;
+		margin-top: 5px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+
+	button {
+		margin-top: 20px;
+		width: 100%;
+		padding: 10px;
+		font-size: 16px;
+		background-color: #8928a7;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #5b1769;
+	}
