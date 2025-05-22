@@ -40,10 +40,10 @@ public class UsuarioService {
     }
 	
 	//Verificar usuário e senha
-    public Usuario autenticarUsuario(String nomeUsuario, String senha) {
+    public Usuario autenticarUsuario(String email, String senha) {
        
         //Verifica existencia do usuário
-        Usuario usuario = usuarioRepository.findByNomeUsuario(nomeUsuario);
+        Usuario usuario = usuarioRepository.findByEmail(email);
        
         if (usuario != null && usuario.getSenha().equals(senha)) {
             return usuario;
