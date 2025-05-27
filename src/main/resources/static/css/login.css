@@ -1,5 +1,5 @@
 body{
-         background-image: url(../img/Design.png);
+         background-image: url(../img/ibage.jpg);
     }
 
     form {
@@ -7,15 +7,15 @@ body{
 		max-width: 400px;
 		margin: 100px auto;
 		padding: 20px;
-		border: 1px solid #e684ea;
+		border: 1px solid #bdbdbd;
 		border-radius: 8px;
-		background-color: #e69cf7;
+		background-color: #bdbdbd;
          opacity: 0.9;
 	}
 
 	h2 {
          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-         color: #3c0d45;
+         color: #565656;
 		text-align: center;
 	}
 
@@ -31,7 +31,7 @@ body{
 		padding: 8px;
 		margin-top: 5px;
 		border-radius: 4px;
-		border: 1px solid #ccc;
+		border: 1px solid #5e5959;
 		box-sizing: border-box;
 	}
 
@@ -40,7 +40,7 @@ body{
 		width: 100%;
 		padding: 10px;
 		font-size: 16px;
-		background-color: #8928a7;
+		background-color: #404040;
 		color: white;
 		border: none;
 		border-radius: 4px;
@@ -48,5 +48,5 @@ body{
 	}
 
 	button:hover {
-		background-color: #5b1769;
+		background-color: #2c2c2c;
 	}
