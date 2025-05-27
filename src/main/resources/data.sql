@@ -20,7 +20,7 @@ INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, tipo_produto, descricao_tip
 (3, 'Bijuteria', 'É biju mas é de rico');
 
 -- Inserindo Ornamentos
-INSERT IGNORE INTO tb_ornamento (id_ornamento, nome_ornamento, descricao_ornamento) VALUES
+INSERT IGNORE INTO tb_ornamento_produto (id_ornamento_produto, nome, descricao) VALUES
 (1, 'Rubi', '1k'),
 (2, 'Esmeralda', '14k'),
 (3, 'Diamante', '8k'),

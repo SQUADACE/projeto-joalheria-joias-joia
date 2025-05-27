@@ -2,7 +2,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,27 +14,27 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_tipo_usuario")
-public class Tipo_Usuario {
+public class TipoUsuario {
 	
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idTipoUsuario", nullable = false)
+	@Column(name = "id_tipo_usuario", nullable = false)
 	private Long idTipoUsuario;
 
-	@Column(name = "nomeTipoUsuario", nullable = false, length = 100)
+	@Column(name = "nome_tipo_usuario", nullable = false, length = 100)
 	private String nomeTipoUsuario;
 	
 	@OneToMany(mappedBy = "tipoUsuario")
-	@JsonManagedReference
+	@JsonIgnoreProperties("tipoUsuario")
 	private List<Usuario> usuarios;
 	
 	//Construtores
-	public Tipo_Usuario() {
+	public TipoUsuario() {
 		
 	}
 
-	public Tipo_Usuario(Long idTipoUsuario, String nomeTipoUsuario, List<Usuario> usuarios) {
+	public TipoUsuario(Long idTipoUsuario, String nomeTipoUsuario, List<Usuario> usuarios) {
 		this.idTipoUsuario = idTipoUsuario;
 		this.nomeTipoUsuario = nomeTipoUsuario;
 		this.usuarios = usuarios;

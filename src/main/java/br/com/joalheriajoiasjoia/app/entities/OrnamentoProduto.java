@@ -1,6 +1,6 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,23 +17,23 @@ public class OrnamentoProduto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idOrnamentoProduto", nullable = false)
+	@Column(name = "id_ornamento_produto", nullable = false)
 	private Long idOrnamentoProduto;
 
-	@Column(name = "nome", nullable = false)
+	@Column(name = "nome_ornamento_produto", nullable = false)
 	private String nome;
 
-	@Column(name = "descricao", nullable = false)
+	@Column(name = "descricao_ornamento_produto", nullable = false)
 	private String descricao;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idOrnamento", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_ornamento", nullable = false)
 	private Ornamento ornamento;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idProduto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_produto", nullable = false)
 	private Produto produto;
 
 	//Construtores

@@ -14,16 +14,16 @@ public class Pagamento {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idPagamento", nullable = false)
+	@Column(name = "id_pagamento", nullable = false)
 	private Long idPagamento;
 	
-	@Column(name = "metodoPagamento", nullable = false)
+	@Column(name = "metodo_pagamento", nullable = false)
 	private String metodoPagamento;
 
 	@Column(name = "status", nullable = false)
 	private String status;
 	
-	@Column(name = "valorPago", nullable = false)
+	@Column(name = "valor_pago", nullable = false)
 	private String valorPago;
 	
 	//Construtores

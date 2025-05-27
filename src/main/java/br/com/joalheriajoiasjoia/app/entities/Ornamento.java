@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,17 +17,16 @@ public class Ornamento {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idOrnamento", nullable = false)
+	@Column(name = "id_ornamento", nullable = false)
 	private Long idOrnamento;
 	
-	@Column(name = "nomeOrnamento", nullable = false, length = 100)
+	@Column(name = "nome_ornamento", nullable = false, length = 100)
 	private String nomeOrnamento;
 	
-	@Column(name = "descricaoOrnamento", nullable = false, length = 100)
+	@Column(name = "descricao_ornamento", nullable = false, length = 100)
 	private String descricaoOrnamento;
 	
 	@OneToMany(mappedBy = "ornamento")
-	@JsonManagedReference
 	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	//Construtores

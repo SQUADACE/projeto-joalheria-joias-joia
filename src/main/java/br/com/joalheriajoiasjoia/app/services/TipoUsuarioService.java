@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.joalheriajoiasjoia.app.entities.Tipo_Usuario;
+import br.com.joalheriajoiasjoia.app.entities.TipoUsuario;
 import br.com.joalheriajoiasjoia.app.repositories.TipoUsuarioRepository;
 
 @Service
@@ -15,17 +15,17 @@ public class TipoUsuarioService {
 	private TipoUsuarioRepository tipoUsuarioRepository;
 	
 	//Salva o tipo do usuário
-	public Tipo_Usuario salvar(Tipo_Usuario tipoUsuario) {
+	public TipoUsuario salvar(TipoUsuario tipoUsuario) {
 		return tipoUsuarioRepository.save(tipoUsuario);
 	}
 	
 	//Busca todos os tipos do usuário
-	public List<Tipo_Usuario> listarTodos(){
+	public List<TipoUsuario> listarTodos(){
 		return tipoUsuarioRepository.findAll();
 	}
 	
 	//Busca tipo do usuário por ID
-	public Tipo_Usuario buscarPorId(Long id) {
+	public TipoUsuario buscarPorId(Long id) {
 		return tipoUsuarioRepository.findById(id).orElse(null);
 	}
 	

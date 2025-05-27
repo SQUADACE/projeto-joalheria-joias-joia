@@ -3,8 +3,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,10 +21,10 @@ public class Usuario {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUsuario", nullable = false)
+	@Column(name = "id_usuario", nullable = false)
 	private Long idUsuario;
 
-	@Column(name = "nomeUsuario",  length = 100)
+	@Column(name = "nome_usuario",  length = 100)
 	private String nomeUsuario;
 
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)
@@ -37,24 +36,22 @@ public class Usuario {
 	@Column(name = "telefone", nullable = false, unique = false, length = 15)
 	private String telefone;
 
-	@Column(name = "dataNascimento", nullable = true, unique = false)
+	@Column(name = "data_nascimento", nullable = true, unique = false)
 	private LocalDate dataNascimento;
 	
 	@Column(name = "senha", nullable = true)
 	private String senha;
 	
 	@OneToMany(mappedBy = "usuario")
-	@JsonManagedReference
 	private List<Endereco> enderecos;
 	
 	@OneToMany(mappedBy = "usuario")
-	@JsonManagedReference
 	private List<Pedido> pedidos;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idTipoUsuario")
-	private Tipo_Usuario tipoUsuario;
+	@JsonIgnoreProperties("usuarios")
+	@JoinColumn(name = "id_tipo_usuario")
+	private TipoUsuario tipoUsuario;
 
 	// Construtores
 	public Usuario() {
@@ -63,7 +60,7 @@ public class Usuario {
 	
 	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String telefone,
 			LocalDate dataNascimento, String senha, List<Endereco> enderecos, List<Pedido> pedidos,
-			Tipo_Usuario tipoUsuario) {
+			TipoUsuario tipoUsuario) {
 		this.idUsuario = idUsuario;
 		this.nomeUsuario = nomeUsuario;
 		this.cpf = cpf;
@@ -149,11 +146,11 @@ public class Usuario {
 		this.pedidos = pedidos;
 	}
 
-	public Tipo_Usuario getTipoUsuario() {
+	public TipoUsuario getTipoUsuario() {
 		return tipoUsuario;
 	}
 
-	public void setTipoUsuario(Tipo_Usuario tipoUsuario) {
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 }

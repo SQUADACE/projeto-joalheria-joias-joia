@@ -3,7 +3,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
@@ -23,10 +23,10 @@ public class Pedido {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idPedido", nullable = false)
+	@Column(name = "id_pedido", nullable = false)
 	private Long idPedido;
 	
-	@Column(name = "dataPedido", nullable = false, unique = true, length = 50)
+	@Column(name = "data_pedido", nullable = false, unique = true, length = 50)
 	private LocalDateTime dataPedido;
 
 	@Column(name = "status", nullable = false, unique = false, length = 15)
@@ -40,18 +40,18 @@ public class Pedido {
 	private List<PedidoProduto> pedidosProdutos;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idEndereco", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_endereco", nullable = false)
 	private Endereco endereco;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idCupomDesconto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_cupom_desconto", nullable = false)
 	private CupomDesconto cupomDesconto;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idUsuario", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_usuario", nullable = false)
 	private Usuario usuario;
 	
 	//Construtores

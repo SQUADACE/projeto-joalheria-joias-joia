@@ -2,8 +2,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,22 +20,21 @@ public class PedidoProduto {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idPedidoProduto", nullable = false)
+	@Column(name = "id_pedido_produto", nullable = false)
 	private Long idPedidoProduto;
 	
-	@Column(name = "precoUnitario", nullable = false, unique = true, length = 50)
+	@Column(name = "preco_unitario", nullable = false, length = 50)
 	private String precoUnitario;
 
-	@Column(name = "quantidade", nullable = false, unique = false, length = 15)
+	@Column(name = "quantidade", nullable = false, length = 15)
 	private Integer quantidade;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idPedido", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_pedido", nullable = false)
 	private Pedido pedido;
 	
 	@OneToMany(mappedBy = "pedidoProduto")
-	@JsonManagedReference
 	private List<Produto> produtos;
 	
 	//Construtores

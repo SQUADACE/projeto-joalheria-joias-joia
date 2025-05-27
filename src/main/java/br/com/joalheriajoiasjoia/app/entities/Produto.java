@@ -2,8 +2,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,43 +21,42 @@ public class Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProduto", nullable = false)
+	@Column(name = "id_produto", nullable = false)
 	private Long idProduto;
 
-	@Column(name = "nomeProduto", nullable = false, length = 100)
+	@Column(name = "nome_produto", nullable = false, length = 100)
 	private String nomeProduto;
 
 	@Column(name = "preco", nullable = false, length = 50)
 	private Double preco;
 
-	@Column(name = "descricaoProduto", nullable = false, length = 100)
+	@Column(name = "descricao_produto", nullable = false, length = 100)
 	private String descricaoProduto;
 
-	@Column(name = "imgUrl", nullable = false, length = 100)
+	@Column(name = "img_url", nullable = false, length = 100)
 	private String imgUrl;
 	
 	@OneToMany(mappedBy = "produto")
-	@JsonManagedReference
 	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "id_OrnamentoProduto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_ornamento_produto", nullable = false)
 	private OrnamentoProduto ornamentoProduto;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idPedidoProduto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_pedido_produto", nullable = false)
 	private PedidoProduto pedidoProduto;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idTipoProduto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_tipo_produto", nullable = false)
 	private TipoProduto tipoProduto;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "idCategoriaProduto", nullable = false)
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_categoria_produto", nullable = false)
 	private CategoriaProduto categoriaProduto;
 
 	//Construtores

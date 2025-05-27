@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,17 +17,16 @@ public class CategoriaProduto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idCategoriaProduto", nullable = false)
+	@Column(name = "id_categoria_produto", nullable = false)
 	private Long idCategoriaProduto;
 	
-	@Column(name = "categoriaProduto", nullable = false, length = 100)
+	@Column(name = "categoria_produto", nullable = false, length = 100)
 	private String categoriaProduto;
 	
-	@Column(name = "descricaoCategoriaProduto", nullable = false, length = 100)
-	private String descricaoCategoriaProduto;
+	@Column(name = "descricao_categoria", nullable = false, length = 100)
+	private String descricaoCategoria;
 	
 	@OneToMany(mappedBy = "categoriaProduto")
-	@JsonManagedReference
 	private List<Produto> produtos;
 	
 	//Construtores
@@ -37,11 +34,11 @@ public class CategoriaProduto {
 		
 	}
 	
-	public CategoriaProduto(Long idCategoriaProduto, String categoriaProduto, String descricaoCategoriaProduto,
+	public CategoriaProduto(Long idCategoriaProduto, String categoriaProduto, String descricaoCategoria,
 			List<Produto> produtos) {
 		this.idCategoriaProduto = idCategoriaProduto;
 		this.categoriaProduto = categoriaProduto;
-		this.descricaoCategoriaProduto = descricaoCategoriaProduto;
+		this.descricaoCategoria = descricaoCategoria;
 		this.produtos = produtos;
 	}
 
@@ -62,12 +59,12 @@ public class CategoriaProduto {
 		this.categoriaProduto = categoriaProduto;
 	}
 
-	public String getDescricaoCategoriaProduto() {
-		return descricaoCategoriaProduto;
+	public String getDescricaoCategoria() {
+		return descricaoCategoria;
 	}
 
-	public void setDescricaoCategoriaProduto(String descricaoCategoriaProduto) {
-		this.descricaoCategoriaProduto = descricaoCategoriaProduto;
+	public void setDescricaoCategoria(String descricaoCategoria) {
+		this.descricaoCategoria = descricaoCategoria;
 	}
 
 	public List<Produto> getProdutos() {

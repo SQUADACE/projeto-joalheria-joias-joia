@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.joalheriajoiasjoia.app.entities.Tipo_Usuario;
+import br.com.joalheriajoiasjoia.app.entities.TipoUsuario;
 import br.com.joalheriajoiasjoia.app.services.TipoUsuarioService;
 
 @RestController
@@ -24,25 +24,25 @@ public class TipoUsuarioController {
 
 	//Endpoint para salvar um novo tipo de usuário
 	@PostMapping
-	public Tipo_Usuario criarTipoUsuario(@RequestBody Tipo_Usuario tipoUsuario) {
+	public TipoUsuario criarTipoUsuario(@RequestBody TipoUsuario tipoUsuario) {
 		return tipoUsuarioService.salvar(tipoUsuario);
 	}
 
 	//Endpoint para buscar todos os tipos de usuários
 	@GetMapping
-	public List<Tipo_Usuario> buscarTodosTiposUsuarios() {
+	public List<TipoUsuario> buscarTodosTiposUsuarios() {
 		return tipoUsuarioService.listarTodos();
 	}
 
 	//Endpoint para buscar um tipo de usuário por ID
 	@GetMapping("/{id}")
-	public Tipo_Usuario buscarPorIdTipoUsuario(@PathVariable Long id) {
+	public TipoUsuario buscarPorIdTipoUsuario(@PathVariable Long id) {
 		return tipoUsuarioService.buscarPorId(id);
 	}
 
 	//Endpoint para editar um tipo de usuário
 	@PutMapping
-	public Tipo_Usuario editarTipoUsuario(@RequestBody Tipo_Usuario tipoUsuario) {
+	public TipoUsuario editarTipoUsuario(@RequestBody TipoUsuario tipoUsuario) {
 		return tipoUsuarioService.salvar(tipoUsuario);
 	}
 

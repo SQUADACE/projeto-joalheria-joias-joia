@@ -2,8 +2,7 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,10 +20,10 @@ public class Endereco {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idEndereco", nullable = false)
+	@Column(name = "id_endereco", nullable = false)
 	private Long idEndereco;
 
-	@Column(name = "numeroCasa", nullable = false, length = 4)
+	@Column(name = "numero_casa", nullable = false, length = 4)
 	private String numeroCasa;
 
 	@Column(name = "rua", nullable = false, length = 100)
@@ -46,12 +45,11 @@ public class Endereco {
 	private String complemento;
 
 	@OneToMany(mappedBy = "endereco")
-	@JsonManagedReference
 	private List<Pedido> pedidos;
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name = "id_Usuario")
+	@JsonIgnoreProperties
+	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 
 	//Construtores
