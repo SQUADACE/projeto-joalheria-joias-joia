@@ -1,0 +1,45 @@
+	body{
+        background-image: url(../img/ibagem.jpg);
+    }
+    form {
+			font-family: Arial, sans-serif;
+			max-width: 400px;
+			margin: 100px auto;
+			padding: 20px;
+			border: 1px solid #f0ace0;
+			border-radius: 8px;
+			background-color: #f0ace0;
+            opacity: 0.9;
+		}
+
+		h2 {
+			text-align: center;
+			margin-bottom: 20px;
+            color: #952c87;
+		}
+
+		.info {
+			margin: 15px 0;
+			font-size: 18px;
+		}
+
+		.label {
+			font-weight: bold;
+			color: #e47ada;
+		}
+
+		button {
+			display: block;
+			margin: 30px auto 0;
+			padding: 10px 40px;
+			font-size: 16px;
+			background-color: #c76fbb;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #b45fa9;
+		}
