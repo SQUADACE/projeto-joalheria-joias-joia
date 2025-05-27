@@ -11,6 +11,12 @@
 			background-color: #f0ace0;
             opacity: 0.9;
 		}
+        
+    img{
+		align-items: center;
+		width: 70%;
+		margin-left: 56px;
+	}
 
 		h2 {
 			text-align: center;

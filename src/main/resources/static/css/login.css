@@ -2,6 +2,12 @@ body{
          background-image: url(../img/ibage.jpg);
     }
 
+	img{
+		align-items: center;
+		width: 70%;
+		margin-left: 56px;
+	}
+
     form {
 		font-family: Arial, sans-serif;
 		max-width: 400px;
