@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +29,7 @@ public class Ornamento {
 	private String descricaoOrnamento;
 	
 	@OneToMany(mappedBy = "ornamento")
+	@JsonManagedReference
 	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	//Construtores

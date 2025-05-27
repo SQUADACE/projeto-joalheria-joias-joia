@@ -2,6 +2,9 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,9 +46,11 @@ public class Endereco {
 	private String complemento;
 
 	@OneToMany(mappedBy = "endereco")
+	@JsonManagedReference
 	private List<Pedido> pedidos;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "id_Usuario")
 	private Usuario usuario;
 

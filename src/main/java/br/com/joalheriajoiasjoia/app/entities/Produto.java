@@ -2,6 +2,9 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,21 +38,26 @@ public class Produto {
 	private String imgUrl;
 	
 	@OneToMany(mappedBy = "produto")
+	@JsonManagedReference
 	private List<OrnamentoProduto> ornamentosProdutos;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "id_OrnamentoProduto", nullable = false)
 	private OrnamentoProduto ornamentoProduto;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idPedidoProduto", nullable = false)
 	private PedidoProduto pedidoProduto;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idTipoProduto", nullable = false)
 	private TipoProduto tipoProduto;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idCategoriaProduto", nullable = false)
 	private CategoriaProduto categoriaProduto;
 

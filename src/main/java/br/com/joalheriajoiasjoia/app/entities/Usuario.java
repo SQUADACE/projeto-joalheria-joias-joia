@@ -3,6 +3,9 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,12 +44,15 @@ public class Usuario {
 	private String senha;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonManagedReference
 	private List<Endereco> enderecos;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonManagedReference
 	private List<Pedido> pedidos;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idTipoUsuario")
 	private Tipo_Usuario tipoUsuario;
 

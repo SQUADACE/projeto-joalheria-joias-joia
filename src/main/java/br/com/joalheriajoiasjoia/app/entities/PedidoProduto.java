@@ -2,6 +2,9 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,10 +31,12 @@ public class PedidoProduto {
 	private Integer quantidade;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idPedido", nullable = false)
 	private Pedido pedido;
 	
 	@OneToMany(mappedBy = "pedidoProduto")
+	@JsonManagedReference
 	private List<Produto> produtos;
 	
 	//Construtores

@@ -3,6 +3,9 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,17 +36,21 @@ public class Pedido {
 	private Double total;
 	
 	@OneToMany(mappedBy = "pedido")
+	@JsonManagedReference
 	private List<PedidoProduto> pedidosProdutos;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idEndereco", nullable = false)
 	private Endereco endereco;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idCupomDesconto", nullable = false)
 	private CupomDesconto cupomDesconto;
 	
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Usuario usuario;
 	
