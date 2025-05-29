@@ -27,8 +27,16 @@ document.addEventListener ("DOMContentLoaded",() => {
 		}
 	})
 	
+	
 	//document.addEventListener("DOMContentLoaded", () => {
 		const form = document.getElementById("cadastroendereco");
+		const clienteId = localStorage.getItem('clienteId');
+		
+		if(!clienteId){
+			alert("Cliente não encontrado.Por favor , cadastre um cliente primeiro");
+			window.local.href="cadastroCliente.html";
+			return;
+		}
 		
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
