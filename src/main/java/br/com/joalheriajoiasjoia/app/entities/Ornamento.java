@@ -1,13 +1,10 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,20 +23,15 @@ public class Ornamento {
 	@Column(name = "descricao_ornamento", nullable = false, length = 100)
 	private String descricaoOrnamento;
 	
-	@OneToMany(mappedBy = "ornamento")
-	private List<OrnamentoProduto> ornamentosProdutos;
-	
 	//Construtores
 	public Ornamento() {
 		
 	}
 
-	public Ornamento(Long idOrnamento, String nomeOrnamento, String descricaoOrnamento,
-			List<OrnamentoProduto> ornamentosProdutos) {
+	public Ornamento(Long idOrnamento, String nomeOrnamento, String descricaoOrnamento) {
 		this.idOrnamento = idOrnamento;
 		this.nomeOrnamento = nomeOrnamento;
 		this.descricaoOrnamento = descricaoOrnamento;
-		this.ornamentosProdutos = ornamentosProdutos;
 	}
 
 	//Getters e Setters
@@ -65,13 +57,5 @@ public class Ornamento {
 
 	public void setDescricaoOrnamento(String descricaoOrnamento) {
 		this.descricaoOrnamento = descricaoOrnamento;
-	}
-
-	public List<OrnamentoProduto> getOrnamentosProdutos() {
-		return ornamentosProdutos;
-	}
-
-	public void setOrnamentosProdutos(List<OrnamentoProduto> ornamentosProdutos) {
-		this.ornamentosProdutos = ornamentosProdutos;
 	}
 }

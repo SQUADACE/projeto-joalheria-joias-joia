@@ -1,9 +1,5 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -41,14 +36,10 @@ public class Endereco {
 	@Column(name = "uf", nullable = false, length = 2)
 	private String uf;
 
-	@Column(name = "complemento", nullable = false, length = 100)
+	@Column(name = "complemento", length = 100)
 	private String complemento;
-
-	@OneToMany(mappedBy = "endereco")
-	private List<Pedido> pedidos;
 	
 	@ManyToOne
-	@JsonIgnoreProperties
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 
@@ -58,7 +49,7 @@ public class Endereco {
 	}
 
 	public Endereco(Long idEndereco, String numeroCasa, String rua, String bairro, String cidade, String cep,
-			String uf, String complemento, List<Pedido> pedidos, Usuario usuario) {
+			String uf, String complemento, Usuario usuario) {
 		this.idEndereco = idEndereco;
 		this.numeroCasa = numeroCasa;
 		this.rua = rua;
@@ -67,7 +58,6 @@ public class Endereco {
 		this.cep = cep;
 		this.uf = uf;
 		this.complemento = complemento;
-		this.pedidos = pedidos;
 		this.usuario = usuario;
 	}
 	
@@ -142,13 +132,5 @@ public class Endereco {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
 	}
 }

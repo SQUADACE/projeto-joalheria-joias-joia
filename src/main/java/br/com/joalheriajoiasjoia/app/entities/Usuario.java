@@ -3,8 +3,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,11 +43,7 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario")
 	private List<Endereco> enderecos;
 	
-	@OneToMany(mappedBy = "usuario")
-	private List<Pedido> pedidos;
-	
 	@ManyToOne
-	@JsonIgnoreProperties("usuarios")
 	@JoinColumn(name = "id_tipo_usuario")
 	private TipoUsuario tipoUsuario;
 
@@ -59,8 +53,7 @@ public class Usuario {
 	}
 	
 	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String telefone,
-			LocalDate dataNascimento, String senha, List<Endereco> enderecos, List<Pedido> pedidos,
-			TipoUsuario tipoUsuario) {
+			LocalDate dataNascimento, String senha, List<Endereco> enderecos,TipoUsuario tipoUsuario) {
 		this.idUsuario = idUsuario;
 		this.nomeUsuario = nomeUsuario;
 		this.cpf = cpf;
@@ -69,7 +62,6 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 		this.senha = senha;
 		this.enderecos = enderecos;
-		this.pedidos = pedidos;
 		this.tipoUsuario = tipoUsuario;
 	}
 
@@ -136,14 +128,6 @@ public class Usuario {
 
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
-	}
-
-	public List<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(List<Pedido> pedidos) {
-		this.pedidos = pedidos;
 	}
 
 	public TipoUsuario getTipoUsuario() {
