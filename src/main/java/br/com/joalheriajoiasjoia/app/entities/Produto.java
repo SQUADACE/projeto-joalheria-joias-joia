@@ -1,9 +1,5 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -36,26 +31,15 @@ public class Produto {
 	@Column(name = "img_url", nullable = false, length = 100)
 	private String imgUrl;
 	
-	@OneToMany(mappedBy = "produto")
-	private List<OrnamentoProduto> ornamentosProdutos;
+	@ManyToOne
+	@JoinColumn(name = "id_ornamento", nullable = false)
+	private Ornamento ornamento;
 	
 	@ManyToOne
-	@JsonIgnoreProperties
-	@JoinColumn(name = "id_ornamento_produto", nullable = false)
-	private OrnamentoProduto ornamentoProduto;
-	
-	@ManyToOne
-	@JsonIgnoreProperties
-	@JoinColumn(name = "id_pedido_produto", nullable = false)
-	private PedidoProduto pedidoProduto;
-	
-	@ManyToOne
-	@JsonIgnoreProperties
 	@JoinColumn(name = "id_tipo_produto", nullable = false)
 	private TipoProduto tipoProduto;
 	
 	@ManyToOne
-	@JsonIgnoreProperties
 	@JoinColumn(name = "id_categoria_produto", nullable = false)
 	private CategoriaProduto categoriaProduto;
 
@@ -65,16 +49,13 @@ public class Produto {
 	}
 	
 	public Produto(Long idProduto, String nomeProduto, Double preco, String descricaoProduto, String imgUrl,
-			List<OrnamentoProduto> ornamentosProdutos, OrnamentoProduto ornamentoProduto,
-			PedidoProduto pedidoProduto, TipoProduto tipoProduto, CategoriaProduto categoriaProduto) {
+			Ornamento ornamento, TipoProduto tipoProduto, CategoriaProduto categoriaProduto) {
 		this.idProduto = idProduto;
 		this.nomeProduto = nomeProduto;
 		this.preco = preco;
 		this.descricaoProduto = descricaoProduto;
 		this.imgUrl = imgUrl;
-		this.ornamentosProdutos = ornamentosProdutos;
-		this.ornamentoProduto = ornamentoProduto;
-		this.pedidoProduto = pedidoProduto;
+		this.ornamento = ornamento;
 		this.tipoProduto = tipoProduto;
 		this.categoriaProduto = categoriaProduto;
 	}
@@ -120,28 +101,12 @@ public class Produto {
 		this.imgUrl = imgUrl;
 	}
 
-	public List<OrnamentoProduto> getOrnamentosProdutos() {
-		return ornamentosProdutos;
+	public Ornamento getOrnamento() {
+		return ornamento;
 	}
 
-	public void setOrnamentosProdutos(List<OrnamentoProduto> ornamentosProdutos) {
-		this.ornamentosProdutos = ornamentosProdutos;
-	}
-
-	public OrnamentoProduto getOrnamentoProduto() {
-		return ornamentoProduto;
-	}
-
-	public void setOrnamentoProduto(OrnamentoProduto ornamentoProduto) {
-		this.ornamentoProduto = ornamentoProduto;
-	}
-
-	public PedidoProduto getPedidoProduto() {
-		return pedidoProduto;
-	}
-
-	public void setPedidoProduto(PedidoProduto pedidoProduto) {
-		this.pedidoProduto = pedidoProduto;
+	public void setOrnamento(Ornamento ornamento) {
+		this.ornamento = ornamento;
 	}
 
 	public TipoProduto getTipoProduto() {
@@ -158,5 +123,5 @@ public class Produto {
 
 	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
 		this.categoriaProduto = categoriaProduto;
-	}	
+	}
 }

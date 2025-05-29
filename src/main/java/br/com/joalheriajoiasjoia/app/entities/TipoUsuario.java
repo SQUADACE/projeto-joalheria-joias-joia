@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,13 +24,12 @@ public class TipoUsuario {
 	private String nomeTipoUsuario;
 	
 	@OneToMany(mappedBy = "tipoUsuario")
-	@JsonIgnoreProperties("tipoUsuario")
 	private List<Usuario> usuarios;
 	
 	//Construtores
 	public TipoUsuario() {
 		
-	}
+	} 
 
 	public TipoUsuario(Long idTipoUsuario, String nomeTipoUsuario, List<Usuario> usuarios) {
 		this.idTipoUsuario = idTipoUsuario;

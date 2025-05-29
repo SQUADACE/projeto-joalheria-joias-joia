@@ -16,7 +16,7 @@ import br.com.joalheriajoiasjoia.app.entities.CategoriaProduto;
 import br.com.joalheriajoiasjoia.app.services.CategoriaProdutoService;
 
 @RestController
-@RequestMapping("/cadastro_categoria_produto")
+@RequestMapping("/categoria_produto")
 public class CategoriaProdutoController {
 
 	@Autowired
