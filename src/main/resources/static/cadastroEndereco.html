@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <formhtml lang="pt-br">
 
-<head>
-    <link rel="stylesheet" href="css/cadastroEndereco.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Endereco</title>
-</head>
-<body>
-    <form id = "cadastroEnderecoForm">
-        
-        <img id="logo" src="./images/main-logo.png" alt="">
+	<head>
+		<link rel="stylesheet" href="css/cadastroEndereco.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cadastro Endereco</title>
+	</head>
 
-<h1>Informações do Endereço</h1>
+	<body>
+		<form id="cadastroEnderecoForm">
 
-<label for="cep"> Cep:</label>
-<input type="text" name="cep" id="cep" required="required" autofocus><br>
+			<img id="logo" src="./images/main-logo.png" alt="">
 
-<label>Estado:</label>
-<input type="text" name="estado" id="estado" required="required" autofocus><br>
+			<h1>Informações do Endereço</h1>
 
-<label for="cidade"> Cidade:</label>
-<input type="text" name="cidade" id="cidade" required placeholder=""><br>
+			<label for="cep"> Cep:</label>
+			<input type="text" name="cep" id="cep" required="required" autofocus><br>
 
-<label for="bairro"> Bairro:</label>
-<input type="text" name="bairro" id="bairro" required placeholder=""><br>
+			<label>Estado:</label>
+			<input type="text" name="estado" id="estado" required="required" autofocus><br>
 
-<label for="rua"> Rua:</label>
-<input type="text" name="rua" id="rua" required="required"><br>
+			<label for="cidade"> Cidade:</label>
+			<input type="text" name="cidade" id="cidade" required placeholder=""><br>
 
-<label for="numero"> Número:</label>
-<input type="number" name="numero" id="numero" required="required"><br>
+			<label for="bairro"> Bairro:</label>
+			<input type="text" name="bairro" id="bairro" required placeholder=""><br>
 
-<label> Complementos:</label>
-<textarea id = "complemento" name="complemento" rows="5" cols="50" maxlength="100" required
-    placeholder="Exemplo: Casa, Apartamento..."></textarea>
-<br>
+			<label for="rua"> Rua:</label>
+			<input type="text" name="rua" id="rua" required="required"><br>
 
-<input type="submit" name="Enter" value="Enviar" id="enviar">
-<a href="sucesso/sucessocadastro.html" target="alvo" rel="noopener noreferrer"></a>
-<p>
-	
-	<script src="script/cadastroEndereco.js"></script>
+			<label for="numero"> Número:</label>
+			<input type="number" name="numero" id="numero" required="required"><br>
 
-    </body>
-</form>
-</html>
+			<label> Complementos:</label>
+			<textarea id="complemento" name="complemento" rows="5" cols="50" maxlength="100" required
+				placeholder="Exemplo: Casa, Apartamento..."></textarea>
+			<br>
+
+			<button type="submit" name="Enter" value="Enviar" id="enviar">enviar</button>
+		</form>
+
+		<script src="script/cadastroEndereco.js"></script>
+
+	</body>
+
+
+	</html>
