@@ -26,6 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	    document.getElementById('logoutBtn').addEventListener('click', () => {
 	      localStorage.removeItem('usuarioLogado');
 	      alert('Logout efetuado!');
-	      window.location.href = 'login.html';
+	      window.location.href = 'index.html';
 	    });
 	  });
