@@ -7,42 +7,37 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_categoria_produto")
 public class CategoriaProduto {
 
-	//Atributos
+	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_categoria_produto", nullable = false)
 	private Long idCategoriaProduto;
-	
+
 	@Column(name = "categoria_produto", nullable = false, length = 100)
 	private String categoriaProduto;
-	
+
 	@Column(name = "descricao_categoria", nullable = false, length = 100)
 	private String descricaoCategoria;
-	
-	@OneToMany(mappedBy = "categoriaProduto")
-	private List<Produto> produtos;
-	
-	//Construtores
+
+	// Construtores
 	public CategoriaProduto() {
-		
+
 	}
-	
+
 	public CategoriaProduto(Long idCategoriaProduto, String categoriaProduto, String descricaoCategoria,
 			List<Produto> produtos) {
 		this.idCategoriaProduto = idCategoriaProduto;
 		this.categoriaProduto = categoriaProduto;
 		this.descricaoCategoria = descricaoCategoria;
-		this.produtos = produtos;
 	}
 
-	//Getters e Setters
+	// Getters e Setters
 	public Long getIdCategoriaProduto() {
 		return idCategoriaProduto;
 	}
@@ -65,13 +60,5 @@ public class CategoriaProduto {
 
 	public void setDescricaoCategoria(String descricaoCategoria) {
 		this.descricaoCategoria = descricaoCategoria;
-	}
-
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
 	}
 }
