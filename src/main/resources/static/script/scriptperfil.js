@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const usuarioJson = localStorage.getItem('usuarioLogado');
 
   if (!usuarioJson) {
-    alert('Usuário não está logado! Redirecionando para o login...');
-    window.location.href = 'login.html';  // redireciona para login se não tiver dados
+    //alert('Usuário não está logado! Redirecionando para o login...');
+    window.location.href = 'index.html';  // redireciona para login se não tiver dados
     return;
   }
   
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	  // O operador lógico OR (||) é usado para garantir que, caso 'usuario.nome' seja undefined, null ou vazio, o conteúdo do elemento será definido como uma string vazia (''),
 	  // evitando que apareça 'undefined' ou erro na página.
 	  
-	  document.getElementById('nomeUsuario').textContent = usuario.nomeUsuario || '';
+	  document.getElementById('nome').textContent = usuario.nomeUsuario || '';
 	  document.getElementById('email').textContent = usuario.email || '';
 	  
 	   // Configura botão logout para limpar o localStorage e voltar para login
 	    document.getElementById('logoutBtn').addEventListener('click', () => {
 	      localStorage.removeItem('usuarioLogado');
 	      alert('Logout efetuado!');
-	      window.location.href = 'login.html';
+	      window.location.href = 'index.html';
 	    });
 	  });
