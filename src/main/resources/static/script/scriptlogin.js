@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					// SE TUDO ESTIVER OK EXIBE AS INFORMAÇÕES
 					.then(response => {
 					if (response.ok) {
-					return response.json();
+					return response.json();// NO FORMATO JSON
 					// CASO HAJA UM ERRO
 					} else if (response.status === 401) {
 					throw new Error('Email ou senha inválidos.');
