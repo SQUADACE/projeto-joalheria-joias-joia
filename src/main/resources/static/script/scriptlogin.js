@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	form.addEventListener('submit', function(event) {
 			event.preventDefault();
 			
+			// ARMAZENA A SENHA E O EMAIL INFORMADO NO HTML DO LOGIN
+			const senha = document.getElementById("senha").value;
+			const email = document.getElementById("email").value;
+			// REALIZA O POST ENVIENDO AS INFORMAÇÕES PARA O BACKEND
 			fetch('http://localhost:8080/cadastro_usuario/login', {
 						method: 'POST',
 						headers: {
@@ -14,10 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 							senha: senha
 						})
 					})
-					
+					// SE TUDO ESTIVER OK EXIBE AS INFORMAÇÕES
 					.then(response => {
 					if (response.ok) {
 					return response.json();
+					// CASO HAJA UM ERRO
 					} else if (response.status === 401) {
 					throw new Error('Email ou senha inválidos.');
 						} else {
