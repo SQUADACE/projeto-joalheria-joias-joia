@@ -1,9 +1,6 @@
 body{
-<<<<<<< HEAD
-    background-image: url(../img/background/bg-sucesso-produto.png);
-=======
-    background-image: url(../img/aa.png);
->>>>>>> 8a1d6cc (Alterei a validacao produto e sucesso cadastro)
+
+    background-image: url(../img/bg-sucesso-produto.png);
     background-attachment: none;
     text-align: center;
 }
