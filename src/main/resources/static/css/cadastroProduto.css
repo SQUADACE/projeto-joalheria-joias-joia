@@ -4,6 +4,13 @@ body{
     background-image: url(../img/bruna.png);
    }
    
+     img{
+      margin-left: 130px;
+      width: 40%;
+      height: 100%;
+      border-radius: 0%;
+   }
+   
    label, input, select, textarea{
        display: block ;
        width: 95%;
