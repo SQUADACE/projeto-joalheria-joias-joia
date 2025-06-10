@@ -25,7 +25,7 @@ public class Produto {
 	@Column(name = "preco", nullable = false, length = 50)
 	private Double preco;
 
-	@Column(name = "descricao_produto", nullable = false, length = 100)
+	@Column(name = "descricao_produto", nullable = false)
 	private String descricaoProduto;
 
 	@Column(name = "img_url", nullable = false)
