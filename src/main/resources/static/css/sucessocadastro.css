@@ -1,0 +1,55 @@
+body{
+    background-image: url(../img/background/bg-cadastro-endereco.png);
+    background-attachment: none;
+    text-align: center;
+}
+
+h1{
+    display: block ;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+form{
+    width: 550px;
+    margin: auto;
+    background: hsl(0, 0%, 100%);
+    padding: 40px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+#bg{
+    width: 40%;
+    height: 100%;
+    border-color: none;
+ }
+
+img{
+    border: 2px solid;
+    border-color:  hsl(0, 0%, 100%);
+    border-radius: 12px 12px 12px 12px;
+}
+
+ button{
+    width: 100%;
+    border: 2px solid #80d3ff;
+    background-color:  #80d3ff;
+    color: rgb(29, 150, 181);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px 10px 10px 10px;
+  }
+  button:hover{
+   background-color: #a2a0f4;
+   border-color: #a2a0f4;
+   color: #ffffff;
+   transition:all linear 0.3;
+  }
+ 
+ button{
+    text-align: center;
+ }

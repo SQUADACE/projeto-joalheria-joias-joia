@@ -1,7 +1,18 @@
 body{
     background-color: rgb(255, 197, 237);
     background-attachment: fixed;
+<<<<<<< HEAD:src/main/resources/static/css/cadastro/cadastroProduto.css
     background-image: url(../img/background/bg-cadastro-produto.png);
+=======
+    background-image: url(../img/bruna.png);
+   }
+   
+     img{
+      margin-left: 130px;
+      width: 40%;
+      height: 100%;
+      border-radius: 0%;
+>>>>>>> 76066e7792bec7c0138579ded3422d91b0b20a7d:src/main/resources/static/css/cadastroProduto.css
    }
    
    label, input, select, textarea{
