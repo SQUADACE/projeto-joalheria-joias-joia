@@ -44,7 +44,7 @@ INSERT IGNORE INTO tb_endereco(id_endereco, numero_casa, rua, bairro, cidade, uf
 
 --Inserindo produtos
 INSERT IGNORE INTO tb_produto(id_produto, nome_produto, preco, descricao_produto, id_ornamento, id_tipo_produto, id_categoria_produto, img_url) VALUES
-(1, "Anel Rubi Vivara", 1.5, "anel rubi top", 2, 1, 3, "https://lojavivara.vtexassets.com/arquivos/ids/884330/Anel-Classic-Oriental-em-Ouro-Amarelo-18k-com-Rubi-e-Diamantes-17398_2_set.jpg?v=638592393533030000"),
+(1, "Anel Rubi Vivara", 1.5, "anel rubi top", 2, 1, 3, "http://localhost:8080/images/img%20anel.jpg"),
 (2, "Colar Esmeralda", 25.0, "colar esmeralda brilhante", 1, 1, 1, "https://lojavivara.vtexassets.com/arquivos/ids/906682-1600-1600/Pingente-Expressao-Retangular-em-Ouro-Amarelo-18k-com-Esmeralda-104082_1_set.jpg?v=638724009518200000"),
 (3, "Pulseira de Topázio", 80.0, "pulseira de topázio", 2, 2, 2, "https://montecarlo.vtexassets.com/arquivos/ids/703012/NIM028124_1.jpg?v=638647074386970000"),
 (4, "Anel de Paládio", 50.0, "anel de paládio", 3, 3, 1, "https://www.luxjoias.com/images/anelformaturapaladium_18.jpg"), 
